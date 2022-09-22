@@ -1,0 +1,59 @@
+.animals {
+    min-width: $screen-width;
+    min-height: 1110px;
+    position: relative;
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-between;
+        min-height: 872px;
+        position: relative;
+    }
+
+    &__item {
+        border-radius: 5px;
+        border: 1px solid #FE9013;
+        height: 426px;
+
+        &__img {
+            margin-bottom: 8px;
+        }
+
+        &__content {
+            display: flex;
+            justify-content: space-between;
+
+            &__title {
+                margin-left: 16px;
+                margin-bottom: 14px;
+                font-weight: 300;
+                font-size: 15px;
+
+                span {
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: $main-color2;
+                    text-transform: uppercase;
+                }
+            }
+
+            &__img {
+                margin-right: 12px;
+            }
+        }
+
+    }
+
+    &__fon-img1{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+    &__fon-img2{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}

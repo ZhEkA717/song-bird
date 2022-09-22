@@ -12,11 +12,37 @@
     color: $main-color1;
     margin-top: 67px;
     margin-left: 763px;
-    &:hover{
+
+    &:hover {
         cursor: pointer;
         background: $btn-hover-color;
     }
-    &:active{
-        background:$btn-clicked-color;
+
+    &:active {
+        background: $btn-clicked-color;
     }
+
+    &_circle {
+        border-radius: 100%;
+        width: 62px;
+        height: 62px;
+        position: absolute;
+        margin-top: 0;
+        margin-left:0;
+        top: 50%;
+            transform: translateY(-50%);
+        &_left {
+            left: -20px - 62px;
+        }
+
+        &_right {
+            right: -20px - 62px;
+        }
+    }
+    &_under-animals{
+        margin: 80px auto 95px auto;
+        background:$main-color3;
+        border: none;
+    }
+
 }
