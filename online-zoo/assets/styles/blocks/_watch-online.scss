@@ -1,7 +1,7 @@
 .watch-online {
     background: url(../../../assets/images/panda_bj_petstory.jpg) center (center/cover) no-repeat;
     min-height: 780px;
-    min-width: 1600px;
+    min-width: $screen-width;
 
     &__bg {
         background-color: $main-color2;
