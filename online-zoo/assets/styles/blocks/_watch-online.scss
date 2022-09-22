@@ -2,7 +2,46 @@
     background: url(../../../assets/images/panda_bj_petstory.jpg) center (center/cover) no-repeat;
     min-height: 780px;
     min-width: 1600px;
-    &__bg{
-        background-color:$main-color2;
+
+    &__bg {
+        background-color: $main-color2;
+
+        .container {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__copyright {
+        margin-left: 437px;
+        width: 105px;
+
+        &__link {
+            text-decoration: none;
+            color: $main-color1;
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+
+    &__favorite {
+        position: relative;
+        margin-top: 12px;
+        margin-left: 587px;
+        &__descr {
+            position: absolute;
+            top: 75px;
+            left: 83px;
+            font-weight: 700;
+            font-size: 106.496px;
+            text-align: center;
+            text-transform: uppercase;
+            line-height: 75%;
+            color: $main-color1;
+
+            &_yellow {
+                color: $favorite-color;
+            }
+        }
     }
 }
