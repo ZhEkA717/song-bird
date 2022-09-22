@@ -9,5 +9,15 @@
     font-family: 'Roboto';
     box-sizing:border-box;
 }
+h1{
+    margin: 0;
+    padding: 0;
+}
 
-@import "../../../assets/styles/blocks/bg";
+.container{
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+@import "../../../assets/styles/blocks/watch-online";
+@import "../../../assets/styles/blocks/header";
