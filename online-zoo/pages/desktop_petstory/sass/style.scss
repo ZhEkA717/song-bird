@@ -1,1 +1,13 @@
+@import "../../../assets/styles/normalize";
+
+@import "../../../assets/styles/font";
+
+@import "../../../assets/styles/base/variables";
+@import "../../../assets/styles/base/mixins";
+
+*{
+    font-family: 'Roboto';
+    box-sizing:border-box;
+}
+
 @import "../../../assets/styles/blocks/bg";
