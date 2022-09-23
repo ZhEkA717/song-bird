@@ -1,8 +1,9 @@
 .animals {
     min-width: $screen-width;
-    min-height: 1110px;
-    position: relative;
 
+    min-height: 1282px;
+    position: relative;
+    padding-top: 176px;
     &__items {
         display: flex;
         flex-wrap: wrap;
@@ -18,7 +19,8 @@
         height: 426px;
 
         &__img {
-            margin-bottom: 8px;
+
+            margin-bottom: 4px;
         }
 
         &__content {
@@ -27,7 +29,7 @@
 
             &__title {
                 margin-left: 16px;
-                margin-bottom: 14px;
+
                 font-weight: 300;
                 font-size: 15px;
 
@@ -41,6 +43,10 @@
 
             &__img {
                 margin-right: 12px;
+
+                &_meet{
+                    margin-right: 8px;
+                }
             }
         }
 
@@ -49,11 +55,13 @@
     &__fon-img1{
         position: absolute;
         left: 0;
-        bottom: 0;
+
+        bottom: -4px;
     }
     &__fon-img2{
         position: absolute;
         right: 0;
-        bottom: 0;
+
+        bottom: -4px;
     }
 }
