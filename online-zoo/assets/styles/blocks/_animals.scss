@@ -1,8 +1,8 @@
 .animals {
     min-width: $screen-width;
-    min-height: 1110px;
+    min-height: 1282px;
     position: relative;
-
+    padding-top: 176px;
     &__items {
         display: flex;
         flex-wrap: wrap;
@@ -27,7 +27,6 @@
 
             &__title {
                 margin-left: 16px;
-                margin-bottom: 14px;
                 font-weight: 300;
                 font-size: 15px;
 
@@ -52,11 +51,11 @@
     &__fon-img1{
         position: absolute;
         left: 0;
-        bottom: 0;
+        bottom: -4px;
     }
     &__fon-img2{
         position: absolute;
         right: 0;
-        bottom: 0;
+        bottom: -4px;
     }
 }
