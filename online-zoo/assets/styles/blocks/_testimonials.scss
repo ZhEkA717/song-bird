@@ -33,21 +33,12 @@
         border-radius: 20px;
         width: 268px;
         height: 391px;
+        padding: 13px 15px 0 14px;
+        border: 2px solid transparent;
+        background: $testimonials-gradient;
+        box-shadow: inset 0px 0px 0px 100vw $testimonials-card-bg;
         background-color: $testimonials-card-bg;
-        padding: 15px 15px 0 16px;
-        position: relative;
-
-        &::after {
-            content: "";
-            position: absolute;
-            top: -2px;
-            bottom: -2px;
-            left: -2px;
-            right: -2px;
-            background: $testimonials-gradient;
-            border-radius: 20px;
-            z-index: -1;
-        }
+    
 
         &__content {
             margin-top: 11px;
@@ -84,6 +75,7 @@
     }
 
     &__line-scroll {
+        display: block; //
         width: 599px;
         height: 8px;
         background: #F5F7F6;
@@ -91,30 +83,44 @@
         margin: 21px auto 0;
         position: relative;
 
-        &::before {
-            content: "";
-            position: absolute;
-            top: -1px;
-            bottom: -1px;
-            left: -1px;
-            right: -1px;
-            background: $testimonials-gradient;
-            border-radius: 5px;
-            z-index: -1;
-        }
-
-        &__item {
-            width: 115.19px;
-            height: 6px;
-            background: $main-color3;
-            border-radius: 5px;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            &:hover{
-                background:$btn-hover-color;
-                cursor: pointer;
-            }
-        }
+        border: 1px solid transparent;
+        background: $testimonials-gradient;
+        box-shadow: inset 0px 0px 0px 100vw $testimonials-card-bg;
     }
+}
+
+input[type=range] {
+    width: 599px;
+    height: 8px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    border-radius: 5px;
+    height: 6px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    background: $main-color3;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 115px;
+    height: 6px;
+    -webkit-appearance: none;
+
+    &:hover {
+        background-color: $btn-hover-color;
+    }
+}
+
+input[type=range]::-moz-range-track {
+    border-radius: 5px;
+    height: 6px;
+    background-color: $main-color3;
+}
+
+input[type=range]::-moz-range-thumb {
+    cursor: pointer;
 }

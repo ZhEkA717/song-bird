@@ -324,9 +324,10 @@
                     </div>
                 </div>
             </div>
-            <div class="testimonials__line-scroll">
-                <div class="testimonials__line-scroll__item"></div>
-            </div>
+
+            <input class="testimonials__line-scroll" type="range" id="cowbell" name="cowbell" min="0" max="100"
+                value="0" step="10">
+
             <button class="buttons buttons_under-testimonials">leave feedback</button>
         </div>
         <div class="testimonials__fon-img">
@@ -343,7 +344,7 @@
                 <div class="subscribe__items">
                     <div class="subscribe__items__title">Subscribe to our news</div>
                     <form action="" class="form">
-                        <input  required placeholder="Enter your email" type="email" name="email">
+                        <input required placeholder="Enter your email" type="email" name="email">
                         <input id="submit" type="submit" value="Submit" name="submit">
                     </form>
                 </div>
@@ -353,26 +354,36 @@
                     <a class="socials__link" href="pages/desktop_donate/index.html"><button
                             class="buttons buttons_footer">donate for volunteers</button></a>
                     <div class="socials__items">
-                        <div class="socials__item">
-                            <div class="socials__item__img"><img src="assets/icons/facebook_icon.png" alt="facebook">
+                        <a target="_blank" href="https://www.facebook.com/">
+                            <div class="socials__item">
+                                <div class="socials__item__img"><img src="assets/icons/facebook_icon.png"
+                                        alt="facebook">
+                                </div>
+                                <div class="socials__item__descr">Facebook</div>
                             </div>
-                            <div class="socials__item__descr">Facebook</div>
-                        </div>
-                        <div class="socials__item">
-                            <div class="socials__item__img"><img src="assets/icons/twitter_icon.png" alt="twitter">
+                        </a>
+                        <a target="_blank" href="https://twitter.com/">
+                            <div class="socials__item">
+                                <div class="socials__item__img"><img src="assets/icons/twitter_icon.png" alt="twitter">
+                                </div>
+                                <div class="socials__item__descr">Twitter</div>
                             </div>
-                            <div class="socials__item__descr">Twitter</div>
-                        </div>
-                        <div class="socials__item">
-                            <div class="socials__item__img"><img src="assets/icons/instagram_icon.png" alt="instagram">
+                        </a>
+                        <a target="_blank" href="https://www.instagram.com/">
+                            <div class="socials__item">
+                                <div class="socials__item__img"><img src="assets/icons/instagram_icon.png"
+                                        alt="instagram">
+                                </div>
+                                <div class="socials__item__descr">Instagram</div>
                             </div>
-                            <div class="socials__item__descr">Instagram</div>
-                        </div>
-                        <div class="socials__item">
-                            <div class="socials__item__img"><img src="assets/icons/youtube_icon.png" alt="youtube">
+                        </a>
+                        <a target="_blank" href="https://www.youtube.com/">
+                            <div class="socials__item">
+                                <div class="socials__item__img"><img src="assets/icons/youtube_icon.png" alt="youtube">
+                                </div>
+                                <div class="socials__item__descr">YouTube</div>
                             </div>
-                            <div class="socials__item__descr">YouTube</div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="menu-designed">
@@ -400,7 +411,6 @@
             </div>
         </div>
     </footer>
-    <script src="pages/desktop_petstory/js/script.js"></script>
 </body>
 
 </html>
