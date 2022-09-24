@@ -18,7 +18,7 @@ footer {
             }
 
             .form {
-                input[type="text"] {
+                input[type="email"] {
                     margin-top: 14px;
                     border-radius: 2px;
                     border: .7px solid $main-color3;
@@ -29,6 +29,35 @@ footer {
                     font-size: 16px;
                     color: #BDBDBD;
                     padding-left: 10px;
+
+                    &:focus {
+                        outline: none;
+                        border-color: $main-color3;
+                    }
+
+                    &:valid {
+                        border-color:$btn-clicked-color;
+                        & + input{
+                            border-color:$btn-clicked-color;
+                            color:$btn-clicked-color;
+                        }
+                    }
+
+                    &:invalid{
+                        border-color:$btn-mistake-color;
+                        & + input{
+                            border-color:$btn-mistake-color;
+                            color:$btn-mistake-color;
+                        }
+                    }
+
+                    &:not(:focus):invalid{
+                        border-color: $main-color3;
+                        & + input{
+                            border-color:$btn-default-color;
+                            color:$btn-default-color;
+                        }
+                    }
                 }
 
                 input[type="submit"] {
@@ -37,10 +66,11 @@ footer {
                     margin-left: 5px;
                     font-weight: 400;
                     font-size: 16px;
-                    color: $btn-clicked-color;
+                    color: $main-color2;
                     background: #F1F3F2;
-                    border: 1px solid $btn-clicked-color;
+                    border: 1px solid $btn-default-color;
                     border-radius: 5px;
+                    cursor: pointer;
                 }
             }
 
@@ -71,6 +101,18 @@ footer {
             display: flex;
             align-items: baseline;
             margin-bottom: 10px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+            &:hover{
+                cursor: pointer;
+                .socials__item__img{
+                    background: $btn-clicked-color;
+                }
+                .socials__item__descr{
+                    color: $btn-clicked-color;
+                }
+            }
 
             &__img {
                 width: 26px;
@@ -96,14 +138,13 @@ footer {
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
-        border:1px solid white;
         &__titles {
-            width: 228px;
-
+            width: 230px;
+            font-weight: 100;
             div {
-                font-weight: 100;
                 font-size: 16px;
                 color: $main-color1;
+                height: 21px;
             }
             div:first-child{
                 margin-bottom: 10px;
