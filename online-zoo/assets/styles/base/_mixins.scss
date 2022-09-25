@@ -3,3 +3,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+@mixin screen-width {
+    min-width: 1600px;
+}

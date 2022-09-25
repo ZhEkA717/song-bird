@@ -1,6 +1,5 @@
 .animals {
-    min-width: $screen-width;
-
+    @include screen-width;
     min-height: 1282px;
     position: relative;
     padding-top: 176px;
@@ -10,6 +9,7 @@
         justify-content: space-between;
         align-content: space-between;
         min-height: 872px;
+        max-width: 1160px;
         position: relative;
     }
 

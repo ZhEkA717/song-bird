@@ -1,6 +1,6 @@
 .backstage {
+    @include screen-width;
     min-height: 403px;
-    min-width: $screen-width;
     position: relative;
     border: 1px solid transparent;
 
