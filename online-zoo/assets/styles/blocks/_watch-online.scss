@@ -1,29 +1,4 @@
-.watch-online {
-    background: url(../../../assets/images/panda_bj_petstory.jpg) center (center/cover) no-repeat;
-    min-height: 780px;
-    min-width: $screen-width;
-
-    &__bg {
-        background-color: $main-color2;
-
-        .container {
-            display: flex;
-            align-items: center;
-        }
-    }
-
-    &__copyright {
-        margin-left: 437px;
-        width: 105px;
-
-        &__link {
-            text-decoration: none;
-            color: $main-color1;
-            font-size: 16px;
-            font-weight: 500;
-        }
-    }
-
+.watch-online{
     &__favorite {
         position: relative;
         margin-top: 12px;
@@ -38,7 +13,7 @@
             text-transform: uppercase;
             line-height: 75%;
             color: $main-color1;
-
+    
             &_yellow {
                 color: $favorite-color;
             }
