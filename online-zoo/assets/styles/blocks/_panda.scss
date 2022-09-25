@@ -2,6 +2,10 @@
     background: url(../../../assets/images/panda_bj_petstory.jpg) center (center/cover) no-repeat;
     min-height: 780px;
     min-width: $screen-width;
+    &_donate{
+        background: url(../../../assets/images/panda_bj_petstory.jpg) center (center/cover) no-repeat;
+        min-height: 386px;
+    }
 
     &__bg {
         background-color: $main-color2;
