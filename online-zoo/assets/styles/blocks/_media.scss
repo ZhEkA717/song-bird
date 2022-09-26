@@ -12,8 +12,114 @@
     }
 }
 
-@media (max-width:1550px){
-    .backstage__fon-img{
+@media (max-width:1550px) {
+    .backstage__fon-img {
         display: none;
+    }
+}
+
+
+@media (max-width:1350px) {
+
+    .animals__item:nth-child(1),
+    .animals__item:nth-child(2),
+    .animals__item:nth-child(3) {
+        margin-bottom: 92px;
+    }
+
+    .buttons_circle_right {
+        right: 396px;
+    }
+
+    .buttons_circle_left {
+        left: 396px;
+    }
+
+    .animals {
+        min-height: 0;
+        padding-bottom: 140px;
+    }
+}
+
+@media (max-width:1200px) {
+    .container {
+        width: 940px;
+        border:1px solid white;
+    }
+
+    .buttons_under-testimonials {
+        margin-top: 52px;
+    }
+
+    .testimonials__fon-img {
+        display: none;
+    }
+
+    .testimonials {
+        background: url('../../../assets/images/leav_foto_small.png');
+        background-position: right 700px;
+        background-repeat: no-repeat;
+
+        &__items {
+            div:nth-child(4) {
+                display: none;
+            }
+        }
+    }
+
+    .backstage__img {
+        img {
+            width: 455px;
+            height: 408px;
+        }
+    }
+
+    .animals__item {
+        height: 354px;
+
+        .animals__item__img {
+            width: 294px;
+            height: 294px;
+        }
+    }
+
+    .panda {
+        min-height: 584px;
+
+        &__bg {
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    .watch-online__favorite {
+        z-index: 1;
+        margin-top: -10px;
+        margin-left: 457px;
+
+        img {
+            width: 367px;
+            height: 367px;
+        }
+
+        &__descr {
+            font-weight: 700;
+            font-size: 85px;
+            top: 53px;
+            left: 65px;
+        }
+    }
+
+    .buttons_media {
+        margin-top: 41px;
+        margin-left: 564px;
+    }
+
+    .nav {
+        width: 421px;
+    }
+
+    .panda__copyright {
+        margin-left: 200px;
     }
 }
