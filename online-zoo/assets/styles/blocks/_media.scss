@@ -1,0 +1,19 @@
+@media (max-width:1599px) {
+
+    .animals__fon-img1,
+    .animals__fon-img2 {
+        display: none;
+    }
+
+    .animals {
+        background: url('../../../assets/images/strelitzia__small.png'), url('../../../assets/images/palm_foto_small.png');
+        background-position: right bottom, left bottom;
+        background-repeat: no-repeat, no-repeat;
+    }
+}
+
+@media (max-width:1550px){
+    .backstage__fon-img{
+        display: none;
+    }
+}
