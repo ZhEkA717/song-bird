@@ -1,5 +1,5 @@
 footer {
-    min-width: $screen-width;
+    @include screen-width;
     min-height: 443px;
     background: #111115;
     padding-top: 40px;
