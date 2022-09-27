@@ -1,0 +1,131 @@
+@media (max-width:1200px) {
+    .container {
+        width: 940px;
+    }
+
+    .panda {
+        min-height: 470px;
+        &_donate{
+            background-position: bottom;
+        }
+
+        &__bg {
+            position: relative;
+            z-index: 2;
+        }
+
+        &__copyright {
+            margin-left: 256px;
+
+        }
+
+        .nav {
+            min-width: 432px;
+        }
+    }
+
+    .watch-online__favorite {
+        z-index: 1;
+        margin-top: -10px;
+        margin-left: 426px;
+
+        img {
+            width: 367px;
+            height: 367px;
+        }
+
+        &__descr {
+            font-weight: 700;
+            font-size: 85px;
+            top: 53px;
+            left: 65px;
+        }
+    }
+    .buttons_watch-online {
+        margin-top: 41px;
+        margin-left: 534px;
+    }
+    .pick-and-feed{
+        min-height: 1334px;
+        &__text{
+            &__title{
+                line-height: 130%;
+                padding-right: 91px;
+            }
+            &__descr{
+                margin-top: 28px;
+            }
+        }
+        &__friend{
+            min-height: 918px;
+            margin-top: 42px;
+            padding-top: 21px;
+            &__title{
+                margin-left: 231px;
+            }
+            &__descr{
+                margin-top: 13px;
+                margin-left: 48px;
+            }
+        }
+        &__diet{
+            margin: 60px 0 0 196px;
+            &>div:nth-child(2):before{
+                top: 3px;
+                left: -27px;
+            }
+            &>div:nth-child(2):after{
+                top: 3px;
+                left: -27px;
+            }
+        }
+        
+        &__amount{
+            max-width: 810px;
+            hr{
+                width: 777px;
+                left: 13px;
+            }
+            &__dots{
+                padding-left: 11px;
+                padding-right: 10px;
+            }
+            &__prices{
+                width: 0;
+            }
+            &__dot,&__price{
+                &:nth-child(1){
+                    display: none;
+                }
+            }
+        }
+        .buttons_under-form {
+            border: none;
+            margin: 33px 0 0 324px;
+        }
+        &__endtext{
+            margin: 32px 0 0 321px;
+        }
+    }
+  
+
+    footer {
+        .nav_ml {
+            margin-left: 0;
+        }
+    }
+}
+
+@media (max-width:1030px) {
+    footer {
+        .subscribe__items {
+            margin-right: 32px;
+        }
+
+        .nav_ml {
+            margin-left: 5px;
+            min-width: 333px;
+        }
+    }
+}
+
