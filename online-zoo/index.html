@@ -12,14 +12,14 @@
 <body>
     <div class="panda">
         <div class="panda__bg">
-            <div class="container">
+            <div class="container container_active ">
                 <header class="header">
-                   <a class="logo" href="#">
+                    <a class="logo" href="#">
                         <div class="logo__wrapper">
                             <h1 class="logo__wrapper__text">PetStory<br>online</h1>
                             <img class="logo__wrapper__img" src="assets/icons/bamboo.svg" alt="logo-icon">
                         </div>
-                   </a>
+                    </a>
                     <nav class="nav">
                         <ul class="nav__items">
                             <li class="nav__item">
@@ -38,11 +38,47 @@
                             </li>
                         </ul>
                     </nav>
+                    <div class="humburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </header>
                 <div class="panda__copyright">
                     <a class="panda__copyright__link" target="_blank"
                         href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks">Designed by ©</a>
                 </div>
+            </div>
+        </div>
+        <div class="open-bur-menu">
+            <a class="logo" href="#">
+                <div class="logo__wrapper logo__wrapper_scale">
+                    <h1 class="logo__wrapper__text">PetStory<br>online</h1>
+                    <img class="logo__wrapper__img" src="assets/icons/bamboo-burger.svg" alt="logo-icon">
+                </div>
+            </a>
+            <div class="nav">
+                <ul class="nav__items">
+                    <li class="nav__item">
+                        <a class="nav__item__link nav__item__link_active" href="#">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__item__link" href="#">Map</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__item__link" href="#">Zoos</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__item__link" href="pages/desktop_donate/index.html">Donate</a></li>
+                    <li class="nav__item">
+                        <a class="nav__item__link" href="#">Contact us</a>
+                    </li>
+                    <li>
+                        <a class="nav__item__link" target="_blank"
+                            href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks">Designed by
+                            ©</a>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="watch-online">
@@ -67,19 +103,19 @@
                 <div class="backstage__img">
                     <img src="assets/images/bamboo-cap.png" alt="bamboo-cap">
                 </div>
-             
-                    <div class="backstage__content">
-                        <div class="backstage__content__title">The Backstage of the Wilderness World.</div>
-                        <div class="backstage__content__descr">The site was founded on the basis of a volunteer movement
-                            to protect and care for animals.</div>
-                        <div class="backstage__content__subtitle">How it works</div>
-                        <div class="backstage__content__descr backstage__content__descr_line-height">The main goal is to
-                            help the animals, as well as the nature reserves and zoos where they are kept. We are
-                            currently working on video projects targeting pandas in China, eagles on an island near Los
-                            Angeles, alligators in Florida and gorillas in the Congo. These have a total of more than
-                            1,500 mammals and reptiles.</div>
-                    </div>
-               
+
+                <div class="backstage__content">
+                    <div class="backstage__content__title">The Backstage of the Wilderness World.</div>
+                    <div class="backstage__content__descr">The site was founded on the basis of a volunteer movement
+                        to protect and care for animals.</div>
+                    <div class="backstage__content__subtitle">How it works</div>
+                    <div class="backstage__content__descr backstage__content__descr_line-height">The main goal is to
+                        help the animals, as well as the nature reserves and zoos where they are kept. We are
+                        currently working on video projects targeting pandas in China, eagles on an island near Los
+                        Angeles, alligators in Florida and gorillas in the Congo. These have a total of more than
+                        1,500 mammals and reptiles.</div>
+                </div>
+
             </div>
         </div>
         <div class="backstage__fon-img">
@@ -139,7 +175,8 @@
                 </div>
                 <div class="animals__item">
                     <div class="animals__item__img">
-                        <img class="animals__item__img_display" src="assets/images/two-toed-sloth.png" alt="two-toed-sloth">
+                        <img class="animals__item__img_display" src="assets/images/two-toed-sloth.png"
+                            alt="two-toed-sloth">
                         <img class="animals__item__img_none" src="assets/images/alligator.png" alt="alligator">
                         <div></div>
                     </div>
@@ -153,8 +190,10 @@
                             Native to Southeastern U. S.
                         </div>
                         <div class="animals__item__content__img animals__item__content__img_banana">
-                            <img class="animals__item__content__img_display" src="assets/icons/banana-bamboo_icon.png " alt="banana-bamboo">
-                            <img class="animals__item__content__img_none" src="assets/icons/meet-fish_icon.png" alt="meet-fish">
+                            <img class="animals__item__content__img_display" src="assets/icons/banana-bamboo_icon.png "
+                                alt="banana-bamboo">
+                            <img class="animals__item__content__img_none" src="assets/icons/meet-fish_icon.png"
+                                alt="meet-fish">
                         </div>
                     </div>
                 </div>
@@ -226,6 +265,7 @@
             </div>
             <div class="pick-and-feed__subtitle">How it works</div>
             <div class="pick-and-feed__items">
+                <div class="pick-and-feed__items__bg"></div>
                 <div class="pick-and-feed__card">
                     <div class="pick-and-feed__card__img">
                         <img src=" assets/icons/pay.png" alt="pay">
@@ -350,9 +390,10 @@
                 <a class="logo" href="#">
                     <div class="logo__wrapper">
                         <div class="logo__wrapper__text logo__wrapper__text_footer">PetStory<br>online</div>
-                        <img class="logo__wrapper__img logo__wrapper__img_footer" src="assets/icons/bamboo.svg" alt="logo-icon">
+                        <img class="logo__wrapper__img logo__wrapper__img_footer" src="assets/icons/bamboo.svg"
+                            alt="logo-icon">
                     </div>
-               </a>
+                </a>
                 <div class="subscribe__items">
                     <div class="subscribe__items__title">Subscribe to our news</div>
                     <form action="" class="form">
@@ -423,6 +464,7 @@
             </div>
         </div>
     </footer>
+    <script src="pages/desktop_petstory/js/script.js"></script>
 </body>
 
 </html>

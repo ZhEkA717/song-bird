@@ -54,7 +54,7 @@
 
         &__bg {
             position: relative;
-            z-index: 2;
+            z-index: 3;
         }
 
         &__copyright {
@@ -189,18 +189,23 @@
 
         &__item {
             width: 292px;
-            &:nth-child(1){
+
+            &:nth-child(1) {
                 order: 1;
             }
-            &:nth-child(2){
+
+            &:nth-child(2) {
                 order: 4;
             }
-            &:nth-child(3){
+
+            &:nth-child(3) {
                 order: 3;
             }
-            &:nth-child(4){
+
+            &:nth-child(4) {
                 order: 2;
             }
+
             &:nth-child(2) {
                 display: none;
             }
@@ -280,9 +285,10 @@
         }
     }
 
-    .testimonials {     
+    .testimonials {
         input[type=range] {
             width: 402px;
+
             &::-webkit-slider-thumb {
                 width: 75px;
             }
@@ -305,4 +311,443 @@
             min-width: 331px;
         }
     }
+}
+
+@media (max-width: 1000px) {
+    .container {
+        max-width: 750px;
+    }
+
+    .panda {
+        &__copyright {
+            display: none;
+        }
+    }
+
+    .watch-online {
+        &__favorite {
+            margin-left: 295px;
+        }
+
+        .buttons_watch-online {
+            margin-left: 365px;
+        }
+    }
+
+    .backstage {
+        &__img {
+            display: none;
+        }
+
+        &__fon-img {
+            display: block;
+        }
+
+        &__content {
+            max-width: 609px;
+        }
+    }
+
+    .animals {
+        &__items {
+
+            div:nth-child(5),
+            div:nth-child(6) {
+                display: none;
+            }
+        }
+
+        .buttons_circle_left {
+            left: 234px;
+        }
+
+        .buttons_circle_right {
+            right: 234px;
+        }
+    }
+
+    .pick-and-feed {
+        &__items {
+            max-width: 690px;
+        }
+    }
+
+    .testimonials {
+        .container {
+            height: 60px;
+        }
+
+        &__items {
+            flex-direction: column;
+        }
+
+        &__item {
+            width: 622px;
+            height: 138px;
+            overflow: hidden;
+            margin: 10px auto 0 auto;
+        }
+
+        .buttons_under-testimonials {
+            margin: 52px auto 0 auto;
+        }
+    }
+
+    footer {
+        .container {
+            margin: auto;
+            max-width: 700px;
+        }
+
+        .menu-designed__titles {
+            display: none;
+        }
+
+        .nav_ml {
+            margin-left: 10px;
+        }
+    }
+}
+
+.humburger {
+    display: none;
+}
+
+
+.pick-and-feed__items_bg{
+    display: none;
+}
+.burger-nav{
+    display: none;
+}
+.open-bur-menu{
+    display: none;
+}
+@media (max-width:800px) {
+    .container {
+        max-width: 600px;
+    }
+
+    .panda {
+        min-height: 373px;
+
+        .header {
+            height: 34px;
+            justify-content: space-between;
+            width: 600px;
+
+            .logo__wrapper {
+                border: none;
+                height: 34px;
+                width: 0;
+
+                &__text {
+                    font-weight: 400;
+                    font-size: 12.2899px;
+                    line-height: 120%;
+                }
+
+                img {
+                    height: 13.56px;
+                    top: 16.64px;
+                    left: 4.23px;
+                }
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .humburger {
+                padding: 12px;
+                box-sizing: content-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 10px;
+                position: relative;
+                cursor: pointer;
+                &:hover{
+                    opacity: 0.8;
+                }
+                margin-right: -12px;
+
+                span {
+                    display: block;
+                    width: 18px;
+                    height: 2px;
+                    background: $main-color1;
+                    transition: 1s;
+                }
+                &_active{
+                    span:nth-child(1){
+                        transform:translateY(3px) rotate(45deg);
+                    }
+                    span:nth-child(2){
+                        opacity: 0;
+                    }
+                    span:nth-child(3){
+                        transform: translateY(-5px) rotate(-45deg);
+                    }
+                }
+            }
+        }
+        .open-bur-menu{
+            display: block;
+        }
+        .watch-online {
+            &__favorite {
+                margin-top: 9px;
+                margin-left: 310px;
+
+                img {
+                    width: 237.6px;
+                    height: 237.6px;
+                }
+
+                &__descr {
+                    font-size: 54.2894px;
+                    line-height: 75%;
+                    top: 40px;
+                    left: 43px;
+                }
+            }
+
+            .buttons_watch-online {
+                margin-left: -1px;
+                margin-top: -6px;
+            }
+        }
+    }
+
+    .backstage {
+        background: url("../../../assets/images/flower_foto_small.png");
+        background-position: right -6px;
+        background-repeat: no-repeat;
+        padding-bottom: 32px;
+
+        &__fon-img {
+            img {
+                display: none;
+            }
+        }
+
+        &__items {
+            margin-top: 59px;
+        }
+
+        &__content {
+            &__title {
+                margin-left: 4px;
+            }
+
+            &__descr {
+                margin-top: 22px;
+
+                &_line-height {
+                    margin-top: 19px;
+                }
+            }
+
+            &__subtitle {
+                margin-top: 30px;
+                margin-left: 4px;
+            }
+
+            max-width: 488px;
+        }
+    }
+
+    .animals {
+        min-height: 1016px;
+        padding-top: 45px;
+        padding-bottom: 100px;
+        background: url('../../../assets/images/strelitzia-tablet.png'), url('../../../assets/images/palm_foto_tablet.png');
+        background-position: right bottom, left bottom;
+        background-repeat: no-repeat, no-repeat;
+
+        &__items {
+            min-height: 757px;
+        }
+
+        &__item {
+            height: 333px;
+
+            &__img {
+                width: 285px;
+                height: 285px;
+                margin-bottom: 8px;
+            }
+
+            &__content {
+                &__title {
+                    margin-left: 11px;
+
+                    span {
+                        font-size: 12.4695px;
+                    }
+
+                    font-size: 11.6901px;
+                }
+
+                &__img {
+                    img{
+                        height: 29px;
+                    }
+                }
+            }
+        }
+
+        .buttons_circle_left {
+            left: 222px;
+            top: 374px;
+        }
+
+        .buttons_circle_right {
+            right: 222px;
+            top: 374px;
+        }
+
+        .buttons_under-animals {
+            margin: 60px auto 0 auto;
+        }
+    }
+
+    .pick-and-feed {
+        padding-top: 19px;
+        min-height: 779px;
+        .container {
+            max-width: 100%;
+            padding-top: 11px;
+            min-height: 740px;
+            position: relative;
+        }
+        &__title{
+            font-size: 42px;
+        }
+        &__descr{
+            font-size: 22px;
+            line-height: 120%;
+            margin-top: 22px;
+            margin-left: 21px;
+        }
+        &__subdescr{
+            font-size: 16px;
+            line-height: 130%;
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 13px;
+            &_weight{
+                margin-right: 25px;
+                margin-top: 10px;
+            }
+        }
+        &__subtitle {
+            margin-top: 32px;
+        }
+        &__items{
+            position: relative;
+            &__bg {
+                display: block;
+                position: absolute;
+                top: -17px;
+                left: 137px;
+                width: 297px;
+                height: 29px;
+                background: url('../../../assets/icons/arrow_green.png'), url('../../../assets/icons/arrow_green.png');
+                background-position: right center, left center;
+                background-repeat: no-repeat, no-repeat;
+            }
+            margin: 23px auto 0 20px;
+            max-width: 589px;
+        }
+        &__arrow {
+            display: none;
+        }
+    }
+    .buttons_under-pick-and-feed {
+        margin-top: 40px;
+    }
+
+    .testimonials{
+        min-height: 669px;
+        background: url('../../../assets/icons/leav_foto_tablet.png');
+        background-position: right 534px;
+        background-repeat: no-repeat;
+        .container{
+            margin-top: 62px;
+        }
+
+        &__items{
+            margin-top: 31px;
+        }
+        &__item{
+            max-width: 600px;
+            height: 107px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            &__content{
+                height: 36px;
+                overflow: hidden;
+            }
+        }
+        input[type=range] {
+            display: none;
+        }
+        .buttons_under-testimonials {
+            margin: 30px auto 0 auto;
+            width: 239px;
+        }
+    }
+
+    footer{
+        padding-top: 12px;
+        min-height: 282px;
+        .container{
+            margin: 0 auto;
+            max-width: 600px;
+        }
+        .subscribe{
+            height: 50px;
+            &__items{
+                display: none;
+            }
+        }
+
+        .socials-and-menu-designed{
+            flex-direction: column;
+            align-items: flex-start;
+            .socials{
+                display: flex;
+                align-items: flex-end;
+                width: 600px;
+                justify-content: space-between;
+                margin-top: -93px;
+                &__items{
+                    a{margin-bottom: 19px;}
+                }
+                &__item{
+                    &__descr{
+                        display: none;
+                    }
+                }
+                .buttons_footer {
+                    margin-bottom: 41px;
+                }
+            }
+            .menu-designed{
+                width: 602px;
+                margin-top: 25px;;
+                .nav_ml {
+                    margin-left: 2px;
+                    min-width: 297px;
+                }
+                &__titles{
+                    display: block;
+                }
+            }
+          
+        }
+    }
+
 }
