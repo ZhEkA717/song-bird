@@ -150,6 +150,7 @@
                 .pick-and-feed__amount__dot_big,
                 .pick-and-feed__amount__dot_small {
                     opacity: 1;
+                    transition: 1s;
                 }
             }
 
@@ -299,6 +300,7 @@
                 justify-content: space-between;
                 position: relative;
 
+
                 input[type="radio"]:after{
                     content:"$";
                     display: block;
@@ -321,6 +323,9 @@
                     position: relative;
                     padding-left: 26px;
                     cursor: pointer;
+                    &:hover{
+                        color:$main-color3;
+                    }
                 }
 
                 input[type="radio"]:checked+label:before,

@@ -40,13 +40,27 @@ function handleDesktop(e, num) {
     }
 }
 handleDesktop(mediaQuery1, 2);
-handleDesktop(mediaQuery2, 3);
-handleDesktop(mediaQuery3, 4);
+handleDesktop(mediaQuery2, 2);
+handleDesktop(mediaQuery3, 3);
 handleDesktop(mediaQuery4, 5);
 
 window.addEventListener("resize", () => {
     handleDesktop(mediaQuery1, 2);
-    handleDesktop(mediaQuery2, 3);
-    handleDesktop(mediaQuery3, 4);
+    handleDesktop(mediaQuery2, 2);
+    handleDesktop(mediaQuery3, 3);
     handleDesktop(mediaQuery4, 5);
+})
+// hover amount
+pickAndFeedDots.forEach((item,i)=>{
+    let amountEl = pickAndFeedPrices[i];
+    item.addEventListener('mouseover',()=>{
+        if(!(amountEl.classList.contains("pick-and-feed__amount__price_active"))){
+            amountEl.classList.add("pick-and-feed__amount__price_active");
+        }
+    })
+    item.addEventListener("mouseout",()=>{
+        if(amountEl.classList.contains("pick-and-feed__amount__price_active") && !item.classList.contains("pick-and-feed__amount__dot_active") ){
+            amountEl.classList.remove("pick-and-feed__amount__price_active");
+        }
+    })
 })
