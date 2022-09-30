@@ -211,6 +211,7 @@
             font-size: 26px;
             text-transform: uppercase;
             color: $backstage-text-color;
+            cursor: pointer;
 
             &_active {
                 color: $main-color3;
