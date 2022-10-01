@@ -1,0 +1,37 @@
+.open-bur-menu{
+    z-index: 2;
+    position: absolute;
+    top: -400px;
+    width: 100%;
+    height: 329px;
+    background: $main-color1;
+    padding-top: 5px;
+    padding-left: 2px;
+    transition: 1s;
+
+    &_active{
+        top: 34px;
+    }
+
+    .logo__wrapper{
+        border-color: $main-color3;
+        scale: 0.8;
+        &__text{
+            color: $main-color3;
+        }
+    }
+
+    .nav{
+        &__items{
+            flex-direction: column;
+            margin-top: 26px;
+            margin-left: 7px;
+        }
+        &__item{
+            margin-bottom: 19px;
+            &__link{
+                color: $main-color2;
+            }
+        }
+    }
+}

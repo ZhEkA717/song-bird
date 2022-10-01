@@ -11,6 +11,8 @@
 
     &__bg {
         background-color: $main-color2;
+        position: relative;
+        z-index: 1;
 
         .container {
             display: flex;
