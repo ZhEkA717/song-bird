@@ -9,7 +9,7 @@ humburger.addEventListener("click", () => {
         humburger.classList.add("humburger_active");
         openBurMenu.classList.add("open-bur-menu_active");
     }
-})
+});
 
 // Change active element in amount 
 const pickAndFeedDots = document.querySelectorAll(".pick-and-feed__amount__dot"),
@@ -49,7 +49,7 @@ window.addEventListener("resize", () => {
     handleDesktop(mediaQuery2, 2);
     handleDesktop(mediaQuery3, 3);
     handleDesktop(mediaQuery4, 5);
-})
+});
 // hover amount
 pickAndFeedDots.forEach((item,i)=>{
     let amountEl = pickAndFeedPrices[i];
@@ -62,5 +62,5 @@ pickAndFeedDots.forEach((item,i)=>{
         if(amountEl.classList.contains("pick-and-feed__amount__price_active") && !item.classList.contains("pick-and-feed__amount__dot_active") ){
             amountEl.classList.remove("pick-and-feed__amount__price_active");
         }
-    })
-})
+    });
+});
