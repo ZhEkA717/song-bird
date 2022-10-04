@@ -243,8 +243,13 @@
 
     .panda {
         min-height: 335px;
-
+        &__bg{
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
         &_donate {
+            margin-top: 34px;
             min-height: 335px;
             background-position: -265px;
             background-size: 1353px;

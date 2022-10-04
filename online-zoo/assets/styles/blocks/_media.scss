@@ -429,6 +429,12 @@
 
     .panda {
         min-height: 373px;
+        padding-top: 34px;
+        &__bg{
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
 
         .header {
             height: 34px;
