@@ -1,16 +1,32 @@
+
+.popap-fon{
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba($color: #000000, $alpha: 0.7);
+    opacity: 0;
+    &_active{
+        z-index: 998;
+        opacity: 1;
+    }
+}
 .open-bur-menu{
-    z-index: 2;
     position: absolute;
-    top: -400px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 100%;
     height: 329px;
     background: $main-color1;
     padding-top: 5px;
     padding-left: 2px;
-    transition: 1s;
+    opacity: 0;
 
     &_active{
-        top: 34px;
+        transition: 1s;
+        opacity: 1;
     }
 
     .logo__wrapper{
@@ -32,6 +48,17 @@
             &__link{
                 color: $main-color2;
             }
+        }
+    }
+    .close-burger{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
+        cursor: pointer;
+        transition: .5s;
+        &:hover{
+            color:$main-color3;
         }
     }
 }
