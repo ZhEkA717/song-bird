@@ -72,6 +72,9 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        &__bg{
+            display: none;
+        }
     }
 
     &__card {

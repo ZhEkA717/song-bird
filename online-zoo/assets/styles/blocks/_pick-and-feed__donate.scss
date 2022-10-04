@@ -107,6 +107,7 @@
     &__amount {
         max-width: 976px;
         margin: 48px auto 0 auto;
+        position: relative;
 
         &__title {
             font-weight: 400;
@@ -121,20 +122,17 @@
             background: #404950;
             border-radius: 2px;
             height: 27px;
-            position: relative;
             margin-top: 17px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-
-            hr {
-                position: absolute;
-                top: 50%;
-                left: 26px;
-                transform: translateY(-50%);
-                background: #72828E;
-                width: 915px;
-            }
+        }
+        hr {
+            position: absolute;
+            top: 47px;
+            left: 27px;
+            background: #72828E;
+            width: 915px;
         }
 
         &__dot {
@@ -152,6 +150,7 @@
                 .pick-and-feed__amount__dot_big,
                 .pick-and-feed__amount__dot_small {
                     opacity: 1;
+                    transition: 1s;
                 }
             }
 
@@ -213,6 +212,7 @@
             font-size: 26px;
             text-transform: uppercase;
             color: $backstage-text-color;
+            cursor: pointer;
 
             &_active {
                 color: $main-color3;
@@ -300,6 +300,7 @@
                 justify-content: space-between;
                 position: relative;
 
+
                 input[type="radio"]:after{
                     content:"$";
                     display: block;
@@ -322,6 +323,9 @@
                     position: relative;
                     padding-left: 26px;
                     cursor: pointer;
+                    &:hover{
+                        color:$main-color3;
+                    }
                 }
 
                 input[type="radio"]:checked+label:before,
