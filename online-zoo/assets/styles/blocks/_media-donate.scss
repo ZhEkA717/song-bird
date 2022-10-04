@@ -236,10 +236,6 @@
     display: none;
 }
 
-.open-bur-menu {
-    display: none;
-}
-
 @media (max-width:800px) {
     .container {
         max-width: 600px;
@@ -247,8 +243,13 @@
 
     .panda {
         min-height: 335px;
-
+        &__bg{
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
         &_donate {
+            margin-top: 34px;
             min-height: 335px;
             background-position: -265px;
             background-size: 1353px;
@@ -283,6 +284,7 @@
 
             .humburger {
                 padding: 12px;
+                margin-right: -12px;
                 box-sizing: content-box;
                 display: flex;
                 flex-direction: column;
@@ -292,31 +294,17 @@
                 cursor: pointer;
 
                 &:hover {
-                    opacity: 0.8;
+                    span{
+                        background: $main-color3;
+                    }
                 }
-
-                margin-right: -12px;
 
                 span {
                     display: block;
                     width: 18px;
                     height: 2px;
                     background: $main-color1;
-                    transition: 1s;
-                }
-
-                &_active {
-                    span:nth-child(1) {
-                        transform: translateY(3px) rotate(45deg);
-                    }
-
-                    span:nth-child(2) {
-                        opacity: 0;
-                    }
-
-                    span:nth-child(3) {
-                        transform: translateY(-5px) rotate(-45deg);
-                    }
+                    transition: .5s;
                 }
             }
         }
