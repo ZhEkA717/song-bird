@@ -27,18 +27,54 @@
         display: flex;
         justify-content: space-between;
         margin-top: 47px;
+        overflow-y: hidden;
+        overflow-x: auto;
+        gap: 29px;
+
+        &::-webkit-scrollbar {
+            height: 0;
+            width: 0;
+        }
     }
 
     &__item {
         border-radius: 20px;
-        width: 268px;
+        min-width: 268px;
         height: 391px;
         padding: 13px 15px 0 14px;
         border: 2px solid transparent;
         background: $testimonials-gradient;
         box-shadow: inset 0px 0px 0px 100vw $testimonials-card-bg;
         background-color: $testimonials-card-bg;
-    
+        cursor: pointer;
+        &::-webkit-scrollbar {
+            height: 0;
+            width: 0;
+        }
+
+        &_popap {
+            cursor: "auto";
+            width: "267px";
+            height: "391px";
+            position: "absolute";
+            top: "50%";
+            left: "50%";
+            transform: "translate(-50%,-50%)";
+            overflow: "";
+        }
+
+        &__close {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 20px;
+            color: $main-color3;
+
+            &:hover {
+                opacity: 0.7;
+                cursor: pointer;
+            }
+        }
 
         &__content {
             margin-top: 11px;
@@ -46,6 +82,8 @@
             font-size: 15px;
             line-height: 120%;
             color: #767474;
+            overflow: hidden;
+            height: 311px;
         }
 
         &__user {
@@ -54,6 +92,8 @@
 
             img {
                 margin-right: 10px;
+                width: 37px;
+                height: 37px;
             }
 
             &__descr {
@@ -123,4 +163,13 @@ input[type=range]::-moz-range-track {
 
 input[type=range]::-moz-range-thumb {
     cursor: pointer;
+}
+
+.background-popap {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba($color: #000000, $alpha: 0.7);
+    z-index: 999;
 }
