@@ -23,10 +23,6 @@ humburger.addEventListener("click", () => {
 });
 
 //testimonials carousel
-
-
-
-
 const testimonialsItems = document.querySelector(".testimonials__items");
 
 const userAndUsernameArray = [
@@ -39,43 +35,47 @@ const userAndUsernameArray = [
     ['assets/icons/user.png', "Orlando Blum"]
 ];
 
-userAndUsernameArray.forEach(item => {
-    const newItem = document.createElement("div");
-    newItem.classList.add("testimonials__item");
-    newItem.innerHTML = `
-        <div class="testimonials__item__user">
-            <img src=${item[0]} alt="user4">
-            <div class="testimonials__item__user__descr">
-                <span>${item[1]}</span><br>
-                Local Austria<span>•</span>Yesterday
-            </div>
-        </div>
-        <div class="testimonials__item__content">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae nam voluptatibus architecto
-            laborum ipsam a labore possimus, dolor tempora, incidunt laboriosam obcaecati in nulla aliquam.
-            Et exercitationem repellat fuga nisi, doloremque cupiditate facere, dolore laudantium illum esse
-            dolor nostrum molestiae. Cum, sit iste eius ad voluptates nemo aut. Deleniti temporibus,
-            explicabo esse fuga sint nemo ipsa error totam porro autem saepe qui quis aliquam commodi?
-            Accusamus architecto porro ad aliquam in voluptate ex vero sed illo unde, hic inventore
-            voluptatem itaque molestiae facilis error quam. Atque quaerat corrupti id illo.
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae nam voluptatibus architecto
-            laborum ipsam a labore possimus, dolor tempora, incidunt laboriosam obcaecati in nulla aliquam.
-            Et exercitationem repellat fuga nisi, doloremque cupiditate facere, dolore laudantium illum esse
-            dolor nostrum molestiae. Cum, sit iste eius ad voluptates nemo aut. Deleniti temporibus,
-            explicabo esse fuga sint nemo ipsa error totam porro autem saepe qui quis aliquam commodi?
-            Accusamus architecto porro ad aliquam in voluptate ex vero sed illo unde, hic inventore
-            voluptatem itaque molestiae facilis error quam. Atque quaerat corrupti id illo.
-        </div>
-    `;
-
-    testimonialsItems.append(newItem);
-})
 
 
 const inputRange = document.querySelector('input[type="range"]');
 
 const mediaQuery1 = window.matchMedia('(min-width: 1000px)');
 const mediaQuery2 = window.matchMedia('(min-width: 1200px)');
+
+if(mediaQuery1.matches){
+    userAndUsernameArray.forEach(item => {
+        const newItem = document.createElement("div");
+        newItem.classList.add("testimonials__item");
+        newItem.innerHTML = `
+            <div class="testimonials__item__user">
+                <img src=${item[0]} alt="user4">
+                <div class="testimonials__item__user__descr">
+                    <span>${item[1]}</span><br>
+                    Local Austria<span>•</span>Yesterday
+                </div>
+            </div>
+            <div class="testimonials__item__content">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae nam voluptatibus architecto
+                laborum ipsam a labore possimus, dolor tempora, incidunt laboriosam obcaecati in nulla aliquam.
+                Et exercitationem repellat fuga nisi, doloremque cupiditate facere, dolore laudantium illum esse
+                dolor nostrum molestiae. Cum, sit iste eius ad voluptates nemo aut. Deleniti temporibus,
+                explicabo esse fuga sint nemo ipsa error totam porro autem saepe qui quis aliquam commodi?
+                Accusamus architecto porro ad aliquam in voluptate ex vero sed illo unde, hic inventore
+                voluptatem itaque molestiae facilis error quam. Atque quaerat corrupti id illo.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae nam voluptatibus architecto
+                laborum ipsam a labore possimus, dolor tempora, incidunt laboriosam obcaecati in nulla aliquam.
+                Et exercitationem repellat fuga nisi, doloremque cupiditate facere, dolore laudantium illum esse
+                dolor nostrum molestiae. Cum, sit iste eius ad voluptates nemo aut. Deleniti temporibus,
+                explicabo esse fuga sint nemo ipsa error totam porro autem saepe qui quis aliquam commodi?
+                Accusamus architecto porro ad aliquam in voluptate ex vero sed illo unde, hic inventore
+                voluptatem itaque molestiae facilis error quam. Atque quaerat corrupti id illo.
+            </div>
+        `;
+    
+        testimonialsItems.append(newItem);
+    })
+}
+
 
 let amountCard;
 if (mediaQuery1.matches) {
@@ -126,8 +126,8 @@ function handleDesktop(e) {
             <div class="testimonials__item__content">
                 ${cardContent}
             </div>
-            <div class="testimonials__item__close">&#10006;</div>
         </div>
+        <div class="testimonials__item__close">&#10006;</div>
         `;
 
                 document.body.append(backgroundPopap);

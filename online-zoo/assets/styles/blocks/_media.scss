@@ -696,13 +696,15 @@
         &__items {
             margin-top: 31px;
             height: 367px;
+            overflow: visible;
         }
 
         &__item {
             max-width: 600px;
-            min-height: 107px;
+            height: 107px;
+            min-height: auto;
             margin-top: 0;
-            margin-bottom: -12px;
+            overflow: visible;
 
             &__content {
                 height: 36px;
