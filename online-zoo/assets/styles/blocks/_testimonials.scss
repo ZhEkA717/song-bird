@@ -23,6 +23,10 @@
         color: $backstage-text-color;
     }
 
+    &__wrapper{
+        overflow: hidden;
+    }
+
     &__items {
         display: flex;
         justify-content: space-between;

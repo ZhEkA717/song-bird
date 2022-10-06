@@ -1,3 +1,4 @@
+//burger menu
 const humburger = document.querySelector(".humburger"),
     closeBurger = document.querySelector(".close-burger"),
     openBurMenu = document.querySelector(".open-bur-menu"),
@@ -35,14 +36,12 @@ const userAndUsernameArray = [
     ['assets/icons/user.png', "Orlando Blum"]
 ];
 
-
-
 const inputRange = document.querySelector('input[type="range"]');
 
 const mediaQuery1 = window.matchMedia('(min-width: 1000px)');
 const mediaQuery2 = window.matchMedia('(min-width: 1200px)');
 
-if(mediaQuery1.matches){
+if (mediaQuery1.matches) {
     userAndUsernameArray.forEach(item => {
         const newItem = document.createElement("div");
         newItem.classList.add("testimonials__item");
@@ -63,41 +62,38 @@ if(mediaQuery1.matches){
                 Accusamus architecto porro ad aliquam in voluptate ex vero sed illo unde, hic inventore
                 voluptatem itaque molestiae facilis error quam. Atque quaerat corrupti id illo.
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae nam voluptatibus architecto
-                laborum ipsam a labore possimus, dolor tempora, incidunt laboriosam obcaecati in nulla aliquam.
-                Et exercitationem repellat fuga nisi, doloremque cupiditate facere, dolore laudantium illum esse
-                dolor nostrum molestiae. Cum, sit iste eius ad voluptates nemo aut. Deleniti temporibus,
-                explicabo esse fuga sint nemo ipsa error totam porro autem saepe qui quis aliquam commodi?
-                Accusamus architecto porro ad aliquam in voluptate ex vero sed illo unde, hic inventore
-                voluptatem itaque molestiae facilis error quam. Atque quaerat corrupti id illo.
             </div>
         `;
-    
         testimonialsItems.append(newItem);
-    })
+    });
 }
 
-
-let amountCard;
-if (mediaQuery1.matches) {
-    amountCard = 10;
-} else if (mediaQuery2.matches) {
-    amountCard = 11;
-}
-if (amountCard) {
+inputRange.addEventListener("input", () => {
     let scrollingWidth = testimonialsItems.scrollWidth;
-    let step = (scrollingWidth / amountCard) + 3;
+    let lastLeftScroll = scrollingWidth - testimonialsItems.offsetWidth,
+        inputRangeMax = Math.ceil((lastLeftScroll * 100) / scrollingWidth);
+    inputRange.max = inputRangeMax;
+    testimonialsItems.scrollLeft = inputRange.value * lastLeftScroll / inputRangeMax;
+});
 
-    inputRange.addEventListener("input", () => {
-        let inputRangeValue = inputRange.value / 10;
-        testimonialsItems.scrollTo(step * inputRangeValue, scrollingWidth);
-    });
-    testimonialsItems.addEventListener("scroll", () => {
-        const leftScroll = Math.ceil((testimonialsItems.scrollLeft * 100) / scrollingWidth);
+testimonialsItems.addEventListener("scroll", fingerScroll);
+
+function fingerScroll() {
+    let scrollingWidth = testimonialsItems.scrollWidth;
+    let raz = testimonialsItems.scrollLeft + testimonialsItems.offsetWidth,
+        lastLeftScroll = scrollingWidth - testimonialsItems.offsetWidth,
+        inputRangeMax = Math.ceil((lastLeftScroll * 100) / scrollingWidth);
+    inputRange.max = inputRangeMax;
+
+    const leftScroll = Math.ceil((testimonialsItems.scrollLeft * 100) / scrollingWidth);
+
+    if (raz == scrollingWidth) {
+        inputRange.value = inputRangeMax;
+    } else {
         inputRange.value = leftScroll;
-    });
+    }
 }
-
-
+fingerScroll();
 
 //testimonials popap
 
@@ -116,19 +112,19 @@ function handleDesktop(e) {
 
                 backgroundPopap.classList.add("background-popap");
                 backgroundPopap.innerHTML = `
-        <div class="testimonials__item">
-            <div class="testimonials__item__user">
-                <img src=${userImgSrc} alt="userPopap">
-                <div class="testimonials__item__user__descr">
-                    ${userDescrInner}
-                </div>
-            </div>
-            <div class="testimonials__item__content">
-                ${cardContent}
-            </div>
-        </div>
-        <div class="testimonials__item__close">&#10006;</div>
-        `;
+                    <div class="testimonials__item">
+                        <div class="testimonials__item__user">
+                            <img src=${userImgSrc} alt="userPopap">
+                            <div class="testimonials__item__user__descr">
+                                ${userDescrInner}
+                            </div>
+                        </div>
+                        <div class="testimonials__item__content">
+                            ${cardContent}
+                        </div>
+                    </div>
+                    <div class="testimonials__item__close">&#10006;</div>
+                    `;
 
                 document.body.append(backgroundPopap);
                 const createdItem = backgroundPopap.firstElementChild;
@@ -159,7 +155,6 @@ function handleDesktop(e) {
                 });
             });
         });
-
     }
 }
 handleDesktop(mediaQuery3);

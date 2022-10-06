@@ -135,20 +135,20 @@ inputNumber.addEventListener("input", () => {
             if (mediaQuery6.matches) {
                 deleteElementActive();
                 addElementActive(2);
+                break;
             }
-            break;
         case "2000":
             if (mediaQuery5.matches) {
                 deleteElementActive();
                 addElementActive(1);
+                break;
             }
-            break;
         case "5000":
             if (mediaQuery1.matches) {
                 deleteElementActive();
                 addElementActive(0);
+                break;
             }
-            break;
         default:
             deleteElementActive();
             addElementActive(5);
