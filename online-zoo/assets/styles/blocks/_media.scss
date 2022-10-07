@@ -17,10 +17,19 @@
         display: none;
     }
 }
+@media (min-width:1350px) {
+    .buttons_none {
+        top: 43%;
+    }
+}
 
 
 @media (max-width:1350px) {
-
+    .container{
+        .buttons_none {
+            display: none;
+        }
+    }
     .animals {
         min-height: 872px;
         padding-bottom: 140px;
@@ -34,7 +43,7 @@
 
 
     .buttons_circle_right {
-        right: 396px;
+        left: 700px;
     }
 
     .buttons_circle_left {
@@ -127,7 +136,7 @@
     }
 
     .buttons_circle_right {
-        right: 323px;
+        left: 554px;
     }
 
     .buttons_circle_left {
@@ -362,7 +371,7 @@
         }
 
         .buttons_circle_right {
-            right: 234px;
+            left: 454px;
         }
     }
 
@@ -607,7 +616,7 @@
         }
 
         .buttons_circle_right {
-            right: 222px;
+            left: 314px;
             top: 374px;
         }
 
@@ -791,7 +800,6 @@
     .container {
         max-width: 95%;
     }
-
     .panda {
         min-height: 325px;
 
@@ -835,10 +843,16 @@
 
     .animals {
         padding-top: 0;
-
+        .slider-inner {
+            width:100%;
+            transform: translate(0px) !important;
+        }
         &__items {
             max-width: 350px;
             margin: auto;
+            &:first-child,&:last-child{
+                display: none;
+            }
         }
 
         &__item {
@@ -1042,25 +1056,32 @@
             }
         }
     }
-    .animals{
+    .animals {
         padding-bottom: 60px;
-        background: url(../../../assets/images/strelitzia_mobile.png),url(../../../assets/images/palm_foto_mobile.png);
-        background-position: right 1455px,left bottom;
-        background-repeat: no-repeat,no-repeat;
+        background: url(../../../assets/images/strelitzia_mobile.png), url(../../../assets/images/palm_foto_mobile.png);
+        background-position: right 1455px, left bottom;
+        background-repeat: no-repeat, no-repeat;
 
-        &__items{
+        &__items {
             max-width: 285px;
         }
-        &__item{
+
+        &__item {
             margin-bottom: 20px !important;
             height: 332px;
-            margin-left: -9px;
+            margin-left: auto;
+
             &__img {
                 width: 285px;
                 height: 285px;
             }
+
+            .slider-inner {
+                width: 0;
+            }
         }
-        .buttons_under-animals{
+
+        .buttons_under-animals {
             margin-top: 0;
         }
     }

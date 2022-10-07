@@ -3,6 +3,17 @@
     min-height: 1282px;
     position: relative;
     padding-top: 176px;
+    .container{
+        position: relative;
+    }
+    .slider{
+        overflow: hidden;
+        position: relative;
+    }
+    .slider-inner{
+        width: 300%;
+        display: flex;
+    }
     &__items {
         display: flex;
         flex-wrap: wrap;
@@ -39,7 +50,7 @@
                 }  
             }
             .animals__item__content__title{
-                margin-top: -80px;
+                margin-top: -55px;
                 color:$main-color1;
                 span{
                     color: $main-color1;

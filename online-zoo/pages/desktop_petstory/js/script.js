@@ -158,3 +158,105 @@ function handleDesktop(e) {
     }
 }
 handleDesktop(mediaQuery3);
+
+//Slider
+document.addEventListener("DOMContentLoaded", () => {
+
+    
+
+
+    window.addEventListener("resize", resizeSlider);
+    const mediaQuerySlider = window.matchMedia("(min-width: 640px)")
+
+    let index = 1,
+        widthSlides = 0;
+    const container = document.querySelector(".slider"),
+        slidesBox = document.querySelector(".slider-inner"),
+        slides = document.querySelectorAll(".animals__items"),
+        buttons = document.querySelectorAll(".buttons_circle");
+        
+
+    function resizeSlider() {
+        if (mediaQuerySlider.matches) {
+            widthSlides = container.offsetWidth;
+            slidesBox.style.transform = "translateX(" + (-index*widthSlides) + "px)";
+        }
+    }
+
+    resizeSlider();
+
+    buttons.forEach(item => {    
+        function slider() {
+            slidesBox.style.transform = "translateX(" + (-index * widthSlides) + "px)";
+            slidesBox.style.transition = "transform 1s ease-in-out";
+        }
+        item.addEventListener("click", (EO) => {
+            var arr = [];
+            while(arr.length < 6){
+                var r = Math.floor(Math.random() * 6) + 1;
+                if(arr.indexOf(r) === -1){
+                    arr.push(r);
+                }
+            }
+            function generateCard(num){
+                slides[num].innerHTML="";
+                for(let i = 0; i<6; i++){
+                    slides[num].innerHTML += `
+                    <div class="animals__item">
+                        <div class="animals__item__img">
+                            <img src="assets/images/image${arr[i]}.png" alt="pandas">
+                            <div></div>
+                        </div>
+                        <div class="animals__item__content">
+                            <div class="animals__item__content__title">
+                                <span>Giant Pandas</span><br>
+                                Native to Southwest China
+                            </div>
+                            <div class="animals__item__content__img animals__item__content__img_banana">
+                                <img src="assets/icons/banana-bamboo_icon.png" alt="banana-bamboo">
+                            </div>
+                        </div>
+                    </div>
+                `;
+                }
+            }
+    
+            if (EO.target.classList.contains("buttons_circle_left") ||
+                EO.target.parentNode.classList.contains("buttons_circle_left")) {
+                index <= 0 ? false : index--;
+                generateCard(0);
+                slider();
+            } else if (EO.target.classList.contains("buttons_circle_right") ||
+                EO.target.parentNode.classList.contains("buttons_circle_right")) {
+                index >= slides.length - 1 ? false : index++;
+                generateCard(2);
+                slider();
+            }
+            setTimeout(()=>{generateCard(1)},1000); 
+        });
+    });
+
+
+    slidesBox.addEventListener('transitionend', () => {
+      setTimeout(()=>{
+        if (index == slides.length - 1) {
+            index = 1;
+            slidesBox.style.transition = "none";
+            slidesBox.style.transform = "translateX(" + (-index * widthSlides) + "px)";
+        } else if (index == 0) {
+            index = slides.length - 2;
+            slidesBox.style.transition = "none";
+            slidesBox.style.transform = "translateX(" + (-index * widthSlides) + "px)";
+
+        }
+      },100);
+    });
+
+});
+
+
+var arr = [];
+while(arr.length < 6){
+    var r = Math.floor(Math.random() * 6) + 1;
+    if(arr.indexOf(r) === -1) arr.push(r);
+}
