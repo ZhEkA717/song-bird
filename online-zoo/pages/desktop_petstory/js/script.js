@@ -158,3 +158,88 @@ function handleDesktop(e) {
     }
 }
 handleDesktop(mediaQuery3);
+
+//Slider
+
+window.addEventListener("resize", resizeSlider);
+const mediaQuerySlider = window.matchMedia("(min-width: 640px)")
+
+
+
+let index = 1;
+const container = document.querySelector(".slider"),
+    slidesBox = document.querySelector(".slider-inner"),
+    slides = document.querySelectorAll(".animals__items") //коллекция с карточками жвиотных
+    buttons = document.querySelectorAll(".buttons_circle"),
+    widthSlides = 0; // коллекция с кнопками
+
+function resizeSlider() {
+    if (mediaQuerySlider.matches) {
+        widthSlides = slides[0].offsetWidth;
+        slidesBox.style.transform = "translateX(" + (-widthSlides) + "px)";
+    }
+}
+
+resizeSlider();
+
+function removeCardsTransition(){
+    
+}
+function addCardsTransition(){
+
+}
+
+buttons.forEach(item => {
+var arr = [];
+while(arr.length < 6){
+    var r = Math.floor(Math.random() * 6) + 1;
+    if(arr.indexOf(r) === -1) arr.push(r);
+}
+    function slider() {
+        slidesBox.style.transform = "translateX(" + (-index * widthSlides) + "px)";
+        slidesBox.style.transition = "transform 1s ease-in-out";
+        
+        document.querySelectorAll(".animals__item__img").forEach(item=>{
+            if(item.parentNode.parentNode.classList.contains("center")){
+                item.querySelectorAll("img").forEach(item=>{
+                    slidesBox.addEventListener("transitionend",()=>{
+                        item.src=`assets/images/image${arr[0]}.png`;
+                    })
+                })
+            }else{
+                item.querySelectorAll("img").forEach(item=>{
+                    item.src=`assets/images/image${0}.png`;
+                })
+            }
+        })
+    }
+    item.addEventListener("click", (EO) => {
+        if (EO.target.classList.contains("buttons_circle_left") 
+        || EO.target.parentNode.classList.contains("buttons_circle_left")) {
+            index <= 0 ? false : index--;
+            slider();
+        } else if (EO.target.classList.contains("buttons_circle_right" ) 
+        || EO.target.parentNode.classList.contains("buttons_circle_right")) {
+            index >= slides.length - 1 ? false : index++;
+            slider();
+        }
+    });
+})
+
+
+slidesBox.addEventListener('transitionend', () => {
+    if (index == slides.length - 1) {
+        index = 1;
+        slidesBox.style.transition = "none";
+        slidesBox.style.transform = "translateX(" + (-index * widthSlides) + "px)";
+    } else if (index == 0) {
+        index = slides.length - 2;
+        slidesBox.style.transition = "none";
+        slidesBox.style.transform = "translateX(" + (-index * widthSlides) + "px)";
+
+    }
+});
+
+
+
+

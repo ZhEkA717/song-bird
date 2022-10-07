@@ -3,6 +3,17 @@
     min-height: 1282px;
     position: relative;
     padding-top: 176px;
+    .container{
+        position: relative;
+    }
+    .slider{
+        overflow: hidden;
+        position: relative;
+    }
+    .slider-inner{
+        width: 300%;
+        display: flex;
+    }
     &__items {
         display: flex;
         flex-wrap: wrap;
