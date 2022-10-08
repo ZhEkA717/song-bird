@@ -161,10 +161,6 @@ handleDesktop(mediaQuery3);
 
 //Slider
 document.addEventListener("DOMContentLoaded", () => {
-
-    
-
-
     window.addEventListener("resize", resizeSlider);
     const mediaQuerySlider = window.matchMedia("(min-width: 640px)")
 
@@ -190,30 +186,77 @@ document.addEventListener("DOMContentLoaded", () => {
             slidesBox.style.transform = "translateX(" + (-index * widthSlides) + "px)";
             slidesBox.style.transition = "transform 1s ease-in-out";
         }
-        item.addEventListener("click", (EO) => {
-            var arr = [];
-            while(arr.length < 6){
-                var r = Math.floor(Math.random() * 6) + 1;
+        function debounceSerie(func,interval,immediate) {
+            let timer;
+            return function() {
+                let context=this, args=arguments;
+                let later=function() {
+                    timer=null;
+                    if ( !immediate )
+                        func.apply(context,args);
+                };
+                let callNow=immediate&&!timer;
+                clearTimeout(timer);
+                timer=setTimeout(later,interval);
+                if ( callNow )
+                    func.apply(context,args);
+            };
+        };
+
+        item.addEventListener("click", debounceSerie(startSlider,1000,true));
+
+        function startSlider(EO){
+            const arr = [0];
+            const obj = {
+                1:["Giant Pandas","Native to Southwest China","banana"],
+                2:["Eagles","Native to South America","meet"],
+                3:["Gorillas","Native to Congo","banana"],
+                4:["Cheetahs","Native to Africa","meet"],
+                5:["Two-Toed Sloth","Mesomerica, South America","banana"],
+                6:["Penguins","Native to Antarctica","meet"],
+                7:["Polar Bear","Native to Antarctica","meet"],
+                8:["Wolf","Native to Europe and Asia","meet"],
+                9:["Headgehog","Native to Europe","cherui"],
+                10:["Raccoon","Native to Europe","cherui"],
+                11:["Kangaroo","Native to Australia","grass"],
+                12:["Lion","Native to Africa","meet"],
+                13:["Leopard","Native to Africa","meet"],
+                14:["Fox","Native to Europe and Asia","meet"],
+                15:["Brown Bear","Native to Europe and Asia","berries"],
+                16:["Deer","Native to Europe and Asia","grass"],
+                17:["Panther","Native to Australia","meet"],
+                18:["Elephant","Native to Africa",'grass'],
+                19:["Giraffe","Native to Africa",'grass'],
+                20:["Hippo","Native to Africa",'grass'],
+                21:["Ostrich","Native to Africa","grass"],
+                22:["Alligator","Native to Southeastern U. S.","meet"],
+                23:["Goat","Native to North Africa","grass"],
+                24:["Peacock","Native to India","cherui"],
+                25:["Wild boar","Native to Belarus","acorn"]
+            }
+            while(arr.length < 26){
+                let r = Math.floor(Math.random() * 25) + 1;
                 if(arr.indexOf(r) === -1){
                     arr.push(r);
                 }
             }
+            
             function generateCard(num){
                 slides[num].innerHTML="";
-                for(let i = 0; i<6; i++){
+                for(let i = 1; i<=6; i++){
                     slides[num].innerHTML += `
                     <div class="animals__item">
                         <div class="animals__item__img">
-                            <img src="assets/images/image${arr[i]}.png" alt="pandas">
+                            <img src="assets/images/slider/image${arr[i]}.png" alt="animal${i}">
                             <div></div>
                         </div>
                         <div class="animals__item__content">
                             <div class="animals__item__content__title">
-                                <span>Giant Pandas</span><br>
-                                Native to Southwest China
+                                <span>${obj[`${arr[i]}`][0]}</span><br>
+                                ${obj[`${arr[i]}`][1]}
                             </div>
                             <div class="animals__item__content__img animals__item__content__img_banana">
-                                <img src="assets/icons/banana-bamboo_icon.png" alt="banana-bamboo">
+                                <img src="assets/images/slider/${obj[`${arr[i]}`][2]}.png" alt="banana-bamboo">
                             </div>
                         </div>
                     </div>
@@ -224,16 +267,16 @@ document.addEventListener("DOMContentLoaded", () => {
             if (EO.target.classList.contains("buttons_circle_left") ||
                 EO.target.parentNode.classList.contains("buttons_circle_left")) {
                 index <= 0 ? false : index--;
-                generateCard(0);
+                setTimeout(()=>{generateCard(0)},10);
                 slider();
             } else if (EO.target.classList.contains("buttons_circle_right") ||
                 EO.target.parentNode.classList.contains("buttons_circle_right")) {
                 index >= slides.length - 1 ? false : index++;
-                generateCard(2);
+                setTimeout(()=>{generateCard(2)},10);
                 slider();
             }
             setTimeout(()=>{generateCard(1)},1000); 
-        });
+        }
     });
 
 
@@ -247,16 +290,24 @@ document.addEventListener("DOMContentLoaded", () => {
             index = slides.length - 2;
             slidesBox.style.transition = "none";
             slidesBox.style.transform = "translateX(" + (-index * widthSlides) + "px)";
-
         }
-      },100);
+      },0);
     });
 
 });
 
+// function removeTransition(){
+//     document.querySelectorAll(".animals__item__img").forEach(item=>{
+//         item.querySelectorAll("img").forEach(item=>{
+//             item.style.transition = "1s";
+//         });
+//         item.querySelectorAll("div").forEach(item=>{
+//             item.style.transition = "1s";
+//         });
+//     });
+//     document.querySelectorAll(".animals__item__content__title").forEach(item=>{
+//         item.style.transition = "1s";
+//     });
+// }
 
-var arr = [];
-while(arr.length < 6){
-    var r = Math.floor(Math.random() * 6) + 1;
-    if(arr.indexOf(r) === -1) arr.push(r);
-}
+// removeTransition();
