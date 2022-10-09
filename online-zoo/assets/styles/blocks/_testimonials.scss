@@ -25,6 +25,10 @@
 
     &__wrapper{
         overflow: hidden;
+        &::-webkit-scrollbar {
+            height: 0;
+            width: 0;
+        }
     }
 
     &__items {
@@ -68,8 +72,8 @@
 
         &__close {
             position: absolute;
-            top: calc(50% - 215px);
-            right: calc(50% - 177px);
+            top: calc(50% - 225px);
+            right: calc(50% - 145px);
             font-size: 20px;
             color: $main-color3;
 
@@ -149,7 +153,7 @@ input[type=range]::-webkit-slider-thumb {
     background: $main-color3;
     border-radius: 5px;
     cursor: pointer;
-    width: 115px;
+    width: 12.5%;
     height: 6px;
     -webkit-appearance: none;
 

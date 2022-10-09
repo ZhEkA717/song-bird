@@ -297,10 +297,6 @@
     .testimonials {
         input[type=range] {
             width: 402px;
-
-            &::-webkit-slider-thumb {
-                width: 75px;
-            }
         }
     }
 
@@ -385,10 +381,13 @@
         .container {
             height: 60px;
         }
-
+        &__wrapper{
+            overflow-y: scroll;
+        }
         &__items {
             flex-direction: column;
             height: 510px;
+            overflow-y: scroll;
         }
 
         &__item {
@@ -844,15 +843,15 @@
     .animals {
         padding-top: 0;
         .slider-inner {
-            width:100%;
-            transform: translate(0px) !important;
+            // width:100%;
+            // transform: translate(0px) !important;
         }
         &__items {
             max-width: 350px;
             margin: auto;
-            &:first-child,&:last-child{
-                display: none;
-            }
+            // &:first-child,&:last-child{
+            //     display: none;
+            // }
         }
 
         &__item {
