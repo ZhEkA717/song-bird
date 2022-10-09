@@ -56,8 +56,9 @@
         font-size: 20px;
         cursor: pointer;
         transition: .5s;
+        color: $main-color3;
         &:hover{
-            color:$main-color3;
+            opacity: 0.7;
         }
     }
 }

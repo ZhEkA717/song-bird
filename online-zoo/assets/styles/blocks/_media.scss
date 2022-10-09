@@ -866,6 +866,26 @@
                 display: block;
             }
             order: 1;
+
+            &:hover{
+                .animals__item__img{
+                    position: relative;
+                    img{
+                        scale: 1;
+                        border-radius: 5px;
+                    }
+                    div{
+                       display: none;
+                    }  
+                }
+                .animals__item__content__title{
+                    margin-top: 0;
+                    color:$main-color2;
+                    span{
+                        color: $main-color2;
+                    }
+                }
+            }
         }
 
         .buttons_circle_left,

@@ -289,7 +289,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(() => {generateCard(2)}, 10);
                 slider();
             }
-            // setTimeout(() => {generateCard(1)}, 1000);
         }
     });
 
@@ -302,7 +301,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
         function funTouchStart(EO) {
             EO = EO || window.event;
-            // EO.preventDefault();
             var touchInfoStart = EO.targetTouches[0];
             var touchXs = touchInfoStart.pageX;
             var touchYs = touchInfoStart.pageY;
@@ -311,7 +309,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
             function funTouchMove(EO) {
                 EO = EO || window.event;
-                // EO.preventDefault();
                 var touchInfoMove = EO.targetTouches[0];
                 var touchX1 = touchInfoMove.pageX;
                 var touchY1 = touchInfoMove.pageY;
