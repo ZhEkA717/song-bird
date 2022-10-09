@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(() => {generateCard(2)}, 10);
                 slider();
             }
-            setTimeout(() => {generateCard(1)}, 1000);
+            // setTimeout(() => {generateCard(1)}, 1000);
         }
     });
 
@@ -302,7 +302,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
         function funTouchStart(EO) {
             EO = EO || window.event;
-            EO.preventDefault();
+            // EO.preventDefault();
             var touchInfoStart = EO.targetTouches[0];
             var touchXs = touchInfoStart.pageX;
             var touchYs = touchInfoStart.pageY;
@@ -311,7 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
             function funTouchMove(EO) {
                 EO = EO || window.event;
-                EO.preventDefault();
+                // EO.preventDefault();
                 var touchInfoMove = EO.targetTouches[0];
                 var touchX1 = touchInfoMove.pageX;
                 var touchY1 = touchInfoMove.pageY;
@@ -338,11 +338,20 @@ document.addEventListener("DOMContentLoaded", () => {
     
         function funTouchEnd(EO) {
             EO = EO || window.event;
+            arr = [0]
+            while (arr.length < 26) {
+                let r = Math.floor(Math.random() * 25) + 1;
+                if (arr.indexOf(r) === -1) {
+                    arr.push(r);
+                }
+            }
             if (move == "left") {
                 index >= slides.length - 1 ? false : index++;
+                setTimeout(() => {generateCard(2)}, 10);
                 slider();
             } else if (move == "right") {
                 index <= 0 ? false : index--;
+                setTimeout(() => {generateCard(0)}, 10);
                 slider();
             }
             move = "stop";
@@ -360,6 +369,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 slidesBox.style.transition = "none";
                 slidesBox.style.transform = "translateX(" + (-index * widthSlides) + "px)";
             }
+            generateCard(1);
         }, 0);
     });
 });
