@@ -59,13 +59,6 @@ handleDesktop(mediaQuery2, 5);
 handleDesktop(mediaQuery3, 5);
 handleDesktop(mediaQuery4, 5);
 
-// window.addEventListener("resize", () => {
-//     handleDesktop(mediaQuery1, 5);
-//     handleDesktop(mediaQuery2, 5);
-//     handleDesktop(mediaQuery3, 5);
-//     handleDesktop(mediaQuery4, 5);
-// });
-
 const inputNumber = document.querySelector("input[type=number]");
 [pickAndFeedDots, pickAndFeedPrices].forEach(item => {
     item.forEach((item, i) => {
@@ -109,7 +102,8 @@ inputNumber.addEventListener("input", () => {
         });
     }
     const mediaQuery5 = window.matchMedia('(min-width: 1000px)'),
-    mediaQuery6 = window.matchMedia('(min-width: 800px)');
+        mediaQuery6 = window.matchMedia('(min-width: 800px)');
+        
     switch (inputNumber.value) {
         case "25":
             deleteElementActive();
@@ -138,19 +132,19 @@ inputNumber.addEventListener("input", () => {
                 break;
             }
         case "2000":
-            if (mediaQuery5.matches) {
-                deleteElementActive();
-                addElementActive(1);
-                break;
-            }
+                if (mediaQuery5.matches) {
+                    deleteElementActive();
+                    addElementActive(1);
+                    break;
+                }
         case "5000":
-            if (mediaQuery1.matches) {
-                deleteElementActive();
-                addElementActive(0);
-                break;
-            }
+                    if (mediaQuery1.matches) {
+                        deleteElementActive();
+                        addElementActive(0);
+                        break;
+                    }
         default:
-            deleteElementActive();
-            addElementActive(5);
+                        deleteElementActive();
+                        addElementActive(5);
     }
 });
