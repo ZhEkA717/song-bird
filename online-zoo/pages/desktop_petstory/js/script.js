@@ -38,10 +38,6 @@ const userAndUsernameArray = [
 
 const inputRange = document.querySelector('input[type="range"]');
 
-const mediaQuery1 = window.matchMedia('(min-width: 1000px)');
-const mediaQuery2 = window.matchMedia('(min-width: 1200px)');
-
-// if (mediaQuery1.matches) {
 userAndUsernameArray.forEach(item => {
     const newItem = document.createElement("div");
     newItem.classList.add("testimonials__item");
@@ -66,7 +62,6 @@ userAndUsernameArray.forEach(item => {
         `;
     testimonialsItems.append(newItem);
 });
-// }
 
 inputRange.addEventListener("input", () => {
     let scrollingWidth = testimonialsItems.scrollWidth;
@@ -111,7 +106,7 @@ fingerScroll();
 
 //testimonials popap
 
-const mediaQuery3 = window.matchMedia('(max-width: 1000px)');
+const mediaQueryPopap = window.matchMedia('(max-width: 1000px)');
 
 function handleDesktop(e) {
     if (e.matches) {
@@ -171,7 +166,8 @@ function handleDesktop(e) {
         });
     }
 }
-handleDesktop(mediaQuery3);
+handleDesktop(mediaQueryPopap);
+
 //Slider
 document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", resizeSlider);
@@ -226,6 +222,12 @@ document.addEventListener("DOMContentLoaded", () => {
         24: ["Peacock", "Native to India", "cherui"],
         25: ["Wild boar", "Native to Belarus", "acorn"]
     }
+    
+    // Фильтрация серии событий — дебоунсинг, срабатывание в конце серииs
+    // функция позволяет установить обработчик func, который не срабатывает слишком часто -
+    // если immediate=false - func будет вызван в конце серии событий,
+    // если immediate=true - func будет вызван в начале серии событий
+    // серия событий - последовательность событий, интервалы между которыми не превыщают interval миллисекунд
     function debounceSerie(func, interval, immediate) {
         let timer;
         return function () {
@@ -233,16 +235,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 args = arguments;
             let later = function () {
                 timer = null;
-                if (!immediate)
+                if (!immediate){
                     func.apply(context, args);
+                }  
             };
             let callNow = immediate && !timer;
             clearTimeout(timer);
             timer = setTimeout(later, interval);
-            if (callNow)
+            if (callNow){
                 func.apply(context, args);
+            }   
         };
     };
+
     function generateCard(num) {
         slides[num].innerHTML = "";
         for (let i = 1; i <= 6; i++) {
@@ -311,21 +316,21 @@ document.addEventListener("DOMContentLoaded", () => {
     
         function funTouchStart(EO) {
             EO = EO || window.event;
-            var touchInfoStart = EO.targetTouches[0];
-            var touchXs = touchInfoStart.pageX;
-            var touchYs = touchInfoStart.pageY;
+            let touchInfoStart = EO.targetTouches[0];
+            let touchXs = touchInfoStart.pageX;
+            let touchYs = touchInfoStart.pageY;
     
             animalsBlock.addEventListener('touchmove', funTouchMove);
     
             function funTouchMove(EO) {
                 EO = EO || window.event;
-                var touchInfoMove = EO.targetTouches[0];
-                var touchX1 = touchInfoMove.pageX;
-                var touchY1 = touchInfoMove.pageY;
-                var touchXm = touchX1;
-                var touchYm = touchY1;
+                let touchInfoMove = EO.targetTouches[0];
+                let touchX1 = touchInfoMove.pageX;
+                let touchY1 = touchInfoMove.pageY;
+                let touchXm = touchX1;
+                let touchYm = touchY1;
     
-                var minSwipe = 40;
+                let minSwipe = 20;
     
                 if (touchXs > touchXm && touchXs - touchXm >= minSwipe) {
                     if (Math.abs(touchXs - touchXm) > Math.abs(touchYs - touchYm)) {
