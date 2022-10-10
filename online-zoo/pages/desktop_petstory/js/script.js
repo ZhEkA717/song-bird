@@ -293,8 +293,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-  
-
     const disableContainer = document.querySelector(".animals");
     const disableElem = document.createElement("div");
     disableElem.classList.add("disable-elem")
@@ -344,7 +342,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
             function funTouchMove(EO) {
                 EO = EO || window.event;
-                EO.preventDefault();
                 let touchInfoMove = EO.targetTouches[0];
                 let touchX1 = touchInfoMove.pageX;
                 let touchY1 = touchInfoMove.pageY;
