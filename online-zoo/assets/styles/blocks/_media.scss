@@ -843,15 +843,26 @@
     .animals {
         padding-top: 0;
         .slider-inner {
+<<<<<<< HEAD
+            width:100%;
+            transform: translate(0px) !important;
+=======
             // width:100%;
             // transform: translate(0px) !important;
+>>>>>>> 23d4cec643a933fd1ad4f648550b844395bbeae3
         }
         &__items {
             max-width: 350px;
             margin: auto;
+<<<<<<< HEAD
+            &:first-child,&:last-child{
+                display: none;
+            }
+=======
             // &:first-child,&:last-child{
             //     display: none;
             // }
+>>>>>>> 23d4cec643a933fd1ad4f648550b844395bbeae3
         }
 
         &__item {

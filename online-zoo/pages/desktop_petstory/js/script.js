@@ -266,28 +266,38 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function sideSlider(side){
+        if(side === "left"){
+            index <= 0 ? false : index--;
+            setTimeout(() => {generateCard(0)}, 10);
+        }else if(side === "right"){
+            index >= slides.length - 1 ? false : index++;
+            setTimeout(() => {generateCard(2)}, 10);
+        }
+        slider();
+    }
+
+    function createRandomArray(){
+        arr = [0];
+        while (arr.length < 26) {
+            let r = Math.floor(Math.random() * 25) + 1;
+            if (arr.indexOf(r) === -1) {
+                arr.push(r);
+            }
+        }
+    }
+    
+
     buttons.forEach(item => {
         item.addEventListener("click", debounceSerie(startSlider, 1000, true));
 
         function startSlider(EO) {
-            arr = [0]
-            while (arr.length < 26) {
-                let r = Math.floor(Math.random() * 25) + 1;
-                if (arr.indexOf(r) === -1) {
-                    arr.push(r);
-                }
-            }
+            createRandomArray();
 
-            if (EO.target.classList.contains("buttons_circle_left") ||
-                EO.target.parentNode.classList.contains("buttons_circle_left")) {
-                index <= 0 ? false : index--;
-                setTimeout(() => {generateCard(0)}, 10);
-                slider();
-            } else if (EO.target.classList.contains("buttons_circle_right") ||
-                EO.target.parentNode.classList.contains("buttons_circle_right")) {
-                index >= slides.length - 1 ? false : index++;
-                setTimeout(() => {generateCard(2)}, 10);
-                slider();
+            if (EO.currentTarget.classList.contains("buttons_circle_left")) {
+                sideSlider("left");
+            } else if (EO.currentTarget.classList.contains("buttons_circle_right")){
+                sideSlider("right");
             }
         }
     });
@@ -331,29 +341,30 @@ document.addEventListener("DOMContentLoaded", () => {
                 animalsBlock.removeEventListener('touchmove', funTouchMove, false);
             }, 500);
         }
-        animalsBlock.addEventListener('touchend', funTouchEnd, false);
+        animalsBlock.addEventListener('touchend', debounceSerie(funTouchEnd, 1000, true), false);
     
         function funTouchEnd(EO) {
             EO = EO || window.event;
-            arr = [0]
-            while (arr.length < 26) {
-                let r = Math.floor(Math.random() * 25) + 1;
-                if (arr.indexOf(r) === -1) {
-                    arr.push(r);
-                }
-            }
+            createRandomArray();
             if (move == "left") {
-                index >= slides.length - 1 ? false : index++;
-                setTimeout(() => {generateCard(2)}, 10);
-                slider();
+                sideSlider("right");
             } else if (move == "right") {
-                index <= 0 ? false : index--;
-                setTimeout(() => {generateCard(0)}, 10);
-                slider();
+                sideSlider("left");
             }
             move = "stop";
         }
     }
+
+    document.addEventListener("keyup", debounceSerie(funKeyUp, 1000, true));
+    
+    function funKeyUp(e){
+        createRandomArray();
+        if(e.code==="ArrowLeft"){
+            sideSlider("left");
+        }else if(e.code==="ArrowRight"){
+            sideSlider("right");
+        }
+    };
   
     slidesBox.addEventListener('transitionend', () => {
         setTimeout(() => {
