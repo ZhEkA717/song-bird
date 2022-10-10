@@ -193,6 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function slider() {
         slidesBox.style.transform = "translateX(" + (-index * widthSlides) + "px)";
         slidesBox.style.transition = "transform 1s ease-out";
+        disableOrEnableSliderButtons("disable");            
     }
     let arr = [0];
     const obj = {
@@ -284,11 +285,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function createRandomArray(){
         arr = [0];
-        while (arr.length < 26) {
+        while (arr.length <= 6) {
             let r = Math.floor(Math.random() * 25) + 1;
             if (arr.indexOf(r) === -1) {
                 arr.push(r);
             }
+        }
+    }
+
+  
+
+    const disableContainer = document.querySelector(".animals");
+    const disableElem = document.createElement("div");
+    disableElem.classList.add("disable-elem")
+    disableElem.style.position = "absolute";
+    disableElem.style.top = 0;
+    disableElem.style.height = disableContainer.offsetHeight+"px";
+    disableElem.style.zIndex = 99;
+    disableContainer.append(disableElem);
+
+    function disableOrEnableSliderButtons(condition){
+        const disableElem = document.querySelector(".disable-elem");
+        if(condition==="disable"){
+            disableElem.style.width = "100%";
+        }else if(condition==="enable"){
+            disableElem.style.width = 0;
         }
     }
     
@@ -298,7 +319,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         function startSlider(EO) {
             createRandomArray();
-
             if (EO.currentTarget.classList.contains("buttons_circle_left")) {
                 sideSlider("left");
             } else if (EO.currentTarget.classList.contains("buttons_circle_right")){
@@ -324,6 +344,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
             function funTouchMove(EO) {
                 EO = EO || window.event;
+                EO.preventDefault();
                 let touchInfoMove = EO.targetTouches[0];
                 let touchX1 = touchInfoMove.pageX;
                 let touchY1 = touchInfoMove.pageY;
@@ -383,6 +404,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 slidesBox.style.transform = "translateX(" + (-index * widthSlides) + "px)";
             }
             generateCard(1);
+            disableOrEnableSliderButtons("enable");
         }, 0);
     });
 });
+
+
+
