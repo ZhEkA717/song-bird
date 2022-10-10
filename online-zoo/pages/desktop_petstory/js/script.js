@@ -170,7 +170,7 @@ handleDesktop(mediaQueryPopap);
 
 //Slider
 document.addEventListener("DOMContentLoaded", () => {
-    window.addEventListener("resize", resizeSlider);
+    window.addEventListener("resize", debounceSerie(resizeSlider,100,false));
     const mediaQuerySlider = window.matchMedia("(min-width: 320px)")
 
     let index = 1,
