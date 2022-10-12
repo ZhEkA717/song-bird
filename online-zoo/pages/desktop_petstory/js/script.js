@@ -302,6 +302,10 @@ document.addEventListener("DOMContentLoaded", () => {
     disableElem.style.zIndex = 99;
     disableContainer.append(disableElem);
 
+    disableElem.addEventListener("click",(e)=>{
+        e.preventDefault();
+    });
+
     function disableOrEnableSliderButtons(condition){
         const disableElem = document.querySelector(".disable-elem");
         if(condition==="disable"){

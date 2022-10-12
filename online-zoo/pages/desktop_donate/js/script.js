@@ -65,7 +65,7 @@ const inputNumber = document.querySelector("input[type=number]");
         function deleteActiveAmount() {
             const actCircleElem = document.querySelector(".pick-and-feed__amount__dot_active"),
                 actAmountElem = document.querySelector(".pick-and-feed__amount__price_active");
-            if (!item.classList.contains("pick-and-feed__amount__dot_active") || !item.classList.contains("pick-and-feed__amount__price_active")) {
+            if (actCircleElem && actAmountElem) {
                 actCircleElem.classList.remove("pick-and-feed__amount__dot_active");
                 actAmountElem.classList.remove("pick-and-feed__amount__price_active");
             }
@@ -82,14 +82,27 @@ const inputNumber = document.querySelector("input[type=number]");
     });
 });
 
-inputNumber.addEventListener("input", () => {
+pickAndFeedPrices.forEach((item,i,arr)=>{
+    inputNumber.value = arr[5].innerHTML;
+})
+
+inputNumber.addEventListener("input", (e) => {
+
+    if(inputNumber.value.length >4){
+        inputNumber.value = inputNumber.value.substring(0,4);
+    }
+    if(!inputNumber.value[inputNumber.value.length-1]){
+        inputNumber.value = inputNumber.value.replace(/[^\d]/g, "");
+    }
 
     function deleteElementActive() {
         const actCircleElem = document.querySelector(".pick-and-feed__amount__dot_active"),
             actAmountElem = document.querySelector(".pick-and-feed__amount__price_active");
 
-        actCircleElem.classList.remove("pick-and-feed__amount__dot_active");
-        actAmountElem.classList.remove("pick-and-feed__amount__price_active");
+        if(actCircleElem && actAmountElem){
+            actCircleElem.classList.remove("pick-and-feed__amount__dot_active");
+            actAmountElem.classList.remove("pick-and-feed__amount__price_active");
+        }
     }
 
     function addElementActive(num) {
@@ -138,13 +151,12 @@ inputNumber.addEventListener("input", () => {
                     break;
                 }
         case "5000":
-                    if (mediaQuery1.matches) {
-                        deleteElementActive();
-                        addElementActive(0);
-                        break;
-                    }
+            if (mediaQuery1.matches) {
+                deleteElementActive();
+                addElementActive(0);
+                break;
+            }
         default:
-                        deleteElementActive();
-                        addElementActive(5);
+            deleteElementActive();
     }
 });
