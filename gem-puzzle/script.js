@@ -414,20 +414,23 @@ function saveIsDisabled() {
 }
 
 save.addEventListener("click", (e) => {
-    document.querySelector("*").style.cursor = "wait";
-    save.style.cursor = "wait";
-    setTimeout(()=>{
-        if (save.classList.contains("save-active")) {
+
+    if (save.classList.contains("save-active")) {
+        document.querySelector("*").style.cursor = "wait";
+        save.style.cursor = "wait";
+
+        setTimeout(() => {
             saveRecord();
             const fieldBlock = document.querySelector(".field-block");
             fieldBlock.style.display = "none";
             saveIsDisabled();
             funShuffleAndRestart();
-        }
-    document.querySelector("*").style.cursor = "auto";
-    save.style.cursor = "pointer";    
-    },1000);
- 
+        }, 1000);
+
+        document.querySelector("*").style.cursor = "auto";
+        save.style.cursor = "pointer";
+    }
+
 });
 
 // timer
