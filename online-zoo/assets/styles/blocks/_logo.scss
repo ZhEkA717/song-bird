@@ -1,0 +1,34 @@
+.logo {
+    text-decoration: none;
+    &__wrapper {
+        width: 82px;
+        height: 52px;
+        border: 1px solid $main-color1;
+        border-radius: 2px;
+        position: relative;
+        text-align: center;
+        margin-right: 63px;
+
+        &__text {
+            display: inline-block;
+            color: $main-color1;
+            font-weight: 400;
+            font-size: 19.0145px;
+            line-height: 120%;
+            padding-top: 4px;
+            &_footer {
+                padding-top: 1px;
+            }
+        }
+
+        &__img {
+            position: absolute;
+            display: block;
+            top: 23.64px;
+            left: 9.23px;
+            &_footer{
+                top: 19.64px;
+            }
+        }
+    }
+}

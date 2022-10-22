@@ -1,0 +1,119 @@
+.pick-and-feed {
+    @include screen-width;
+    min-height: 1004px;
+    background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+    opacity: 0.9;
+    padding-top: 69px;
+
+    .container {
+        background: rgba(253, 253, 255, 0.52);
+        backdrop-filter: blur(2px);
+        border-radius: 20px;
+        min-height: 835px;
+        padding-top: 41px;
+    }
+
+    &__title {
+        font-weight: 400;
+        font-size: 48px;
+        text-align: center;
+        color: $main-color3;
+    }
+
+    &__descr {
+        margin-top: 34px;
+        margin-left: 99px;
+        font-weight: 400;
+        font-size: 24px;
+        color: $backstage-text-color;
+    }
+
+    &__subdescr {
+        margin-top: 41px;
+        margin-left: 99px;
+        font-weight: 500;
+        font-size: 16px;
+        color: $backstage-text-color;
+
+        &_weight {
+            font-weight: 400;
+            line-height: 130%;
+            margin-top: 13px;
+
+            a {
+                border-bottom: 1px solid $main-color3;
+                text-decoration: none;
+                color: $backstage-text-color;
+                cursor: pointer;
+
+                &:hover {
+                    color: $main-color3;
+                }
+
+                &:active {
+                    color: $btn-clicked-color;
+                }
+
+            }
+        }
+    }
+
+    &__subtitle {
+        font-weight: 400;
+        font-size: 36px;
+        color: $backstage-text-color;
+        text-align: center;
+        margin-top: 62px;
+    }
+
+    &__items {
+        max-width: 764px;
+        margin: 42px auto 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__bg{
+            display: none;
+        }
+    }
+
+    &__card {
+        width: 168px;
+        height: 244px;
+
+        &__img {
+            width: 168px;
+            height: 168px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid transparent;
+            background: $main-bg-gradient;
+            box-shadow: inset 0px 0px 0px 100vw $main-color1;
+            border-radius: 5px;
+            background-color: $main-color1;
+
+            &_margin {
+                img {
+                    margin-top: 4px;
+                }
+            }
+        }
+
+        &__descr {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140%;
+            color: $backstage-text-color;
+            margin-top: 30px;
+        }
+    }
+
+    &__arrow {
+        margin-bottom: 84px;
+    }
+
+    &__link,&__link:link,&__link:visited,&__link:active {
+        text-decoration: none;
+    }
+}

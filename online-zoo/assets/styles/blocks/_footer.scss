@@ -1,0 +1,176 @@
+footer {
+    @include screen-width;
+    min-height: 443px;
+    background: #111115;
+    padding-top: 40px;
+
+    .subscribe {
+        height: 85px;
+        display: flex;
+        justify-content: space-between;
+
+        &__items {
+
+            &__title {
+                font-weight: 400;
+                font-size: 24px;
+                color: $main-color1;
+            }
+
+            .form {
+                input[type="email"] {
+                    margin-top: 14px;
+                    border-radius: 2px;
+                    border: .7px solid $main-color3;
+                    width: 228px;
+                    height: 42px;
+                    background: #111115;
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: #BDBDBD;
+                    padding-left: 10px;
+
+                    &:focus {
+                        outline: none;
+                        border-color: $main-color3;
+                    }
+
+                    &:valid {
+                        border-color: $btn-clicked-color;
+
+                        &+input {
+                            border-color: $btn-clicked-color;
+                            color: $btn-clicked-color;
+                        }
+                    }
+
+                    &:invalid {
+                        border-color: $btn-mistake-color;
+
+                        &+input {
+                            border-color: $btn-mistake-color;
+                            color: $btn-mistake-color;
+                        }
+                    }
+
+                    &:not(:focus):invalid {
+                        border-color: $main-color3;
+
+                        &+input {
+                            border-color: $btn-default-color;
+                            color: $btn-default-color;
+                        }
+                    }
+                }
+
+                input[type="submit"] {
+                    width: 129px;
+                    height: 42px;
+                    margin-left: 5px;
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: $main-color2;
+                    background: #F1F3F2;
+                    border: 1px solid $btn-default-color;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+            }
+
+        }
+    }
+
+    .socials-and-menu-designed {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .socials {
+        width: 298px;
+        margin-top: 36px;
+
+        &__link,
+        &__link:link,
+        &__link:visited,
+        &__link:active {
+            text-decoration: none;
+        }
+
+        &__items {
+            margin-top: 44px;
+
+            a {
+                display: block;
+                margin-bottom: 10px;
+
+                &,
+                &:link,
+                &:visited,
+                &:active {
+                    text-decoration: none;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &__item {
+            display: flex;
+            align-items: baseline;
+
+            &:hover {
+                cursor: pointer;
+
+                .socials__item__img {
+                    background: $btn-clicked-color;
+                }
+
+                .socials__item__descr {
+                    color: $btn-clicked-color;
+                }
+            }
+
+
+            &__img {
+                width: 26px;
+                height: 26px;
+                border-radius: 100%;
+                background: rgba(196, 196, 196, 0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &__descr {
+                margin-left: 12px;
+                font-weight: 400;
+                font-size: 16px;
+                color: $main-color1;
+            }
+        }
+    }
+
+    .menu-designed {
+        width: 922px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        &__titles {
+            width: 230px;
+            font-weight: 100;
+
+            div {
+                font-size: 16px;
+                color: #BDBDBD;
+                height: 21px;
+            }
+
+            div:first-child {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

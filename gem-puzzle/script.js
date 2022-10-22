@@ -606,7 +606,6 @@ function sortLocalStorageArr(arr) {
    }else{
     return false;
    }
-    
 }
 
 function showTableRecord() {

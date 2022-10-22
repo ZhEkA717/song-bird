@@ -1,0 +1,52 @@
+.backstage {
+    @include screen-width;
+    min-height: 403px;
+    position: relative;
+    border: 1px solid transparent;
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 140px;
+
+    }
+
+    &__img {
+        margin-right: 86px;
+        width: 609px;
+        height: 403px;
+    }
+
+    &__content {
+        font-weight: 400;
+        color: $backstage-text-color;
+
+        &__title {
+            font-size: 48px;
+            line-height: 120%;
+        }
+
+        &__descr {
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 130%;
+
+            &_line-height {
+                line-height: 140%;
+                margin-top: 34px;
+            }
+        }
+
+        &__subtitle {
+            margin-top: 54px;
+            font-size: 24px;
+            line-height: 120%;
+        }
+    }
+
+    &__fon-img{
+        position: absolute;
+        top: 12px;;
+        right: 0;
+    }
+}

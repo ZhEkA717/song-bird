@@ -1,0 +1,34 @@
+.panda {
+
+    @include screen-width;
+    background: url(../../../assets/images/panda_bj_petstory.jpg) center (center/cover) no-repeat;
+    min-height: 780px;
+    
+    &_donate{
+        background: url(../../../assets/images/panda_bj_petstory.jpg) center (center/cover) no-repeat;
+        min-height: 386px;
+    }
+
+    &__bg {
+        background-color: $main-color2;
+        position: relative;
+        z-index: 1;
+
+        .container {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__copyright {
+        margin-left: 437px;
+        width: 105px;
+
+        &__link {
+            text-decoration: none;
+            color: $main-color1;
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+}

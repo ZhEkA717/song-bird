@@ -1,0 +1,74 @@
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 298px;
+    height: 54px;
+    background: $main-bg-gradient;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: $main-color1;
+    margin-top: 67px;
+    margin-left: 763px;
+
+    &:hover {
+        cursor: pointer;
+        background: $btn-hover-color;
+    }
+
+    &:active {
+        background: $btn-clicked-color;
+    }
+
+    &_circle {
+        border-radius: 100%;
+        width: 62px;
+        height: 62px;
+        position: absolute;
+        margin-top: 0;
+
+        margin-left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &_left {
+            left: -20px - 62px;
+        }
+
+        &_right {
+            right: -20px - 62px;
+        }
+    }
+
+    &_under-animals {
+        margin: 80px auto 0 auto;
+        background: $main-color3;
+        border: none;
+    }
+
+    &_under-pick-and-feed {
+        border: none;
+        margin: 60px auto 0 auto;
+    }
+    &_under-testimonials{
+        border:none;
+        border-radius: 5px;
+        margin-left: 0px;
+        margin-top: 32px;
+    }
+
+    &_footer{
+        border:none;
+        border-radius: 5px;
+        margin: 0;
+        top: 0;
+    }
+
+    &_under-form{
+        border:none;
+        margin: 33px 0 0 434px;
+    }
+
+}

@@ -1,0 +1,64 @@
+
+.popap-fon{
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba($color: #000000, $alpha: 0.7);
+    opacity: 0;
+    &_active{
+        z-index: 998;
+        opacity: 1;
+    }
+}
+.open-bur-menu{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 329px;
+    background: $main-color1;
+    padding-top: 5px;
+    padding-left: 2px;
+    opacity: 0;
+
+    &_active{
+        transition: 1s;
+        opacity: 1;
+    }
+
+    .logo__wrapper{
+        border-color: $main-color3;
+        scale: 0.8;
+        &__text{
+            color: $main-color3;
+        }
+    }
+
+    .nav{
+        &__items{
+            flex-direction: column;
+            margin-top: 26px;
+            margin-left: 7px;
+        }
+        &__item{
+            margin-bottom: 19px;
+            &__link{
+                color: $main-color2;
+            }
+        }
+    }
+    .close-burger{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: .5s;
+        color: $main-color3;
+        &:hover{
+            opacity: 0.7;
+        }
+    }
+}

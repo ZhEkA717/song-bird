@@ -1,0 +1,22 @@
+.watch-online{
+    &__favorite {
+        position: relative;
+        margin-top: 12px;
+        margin-left: 587px;
+        &__descr {
+            position: absolute;
+            top: 74px;
+            left: 82px;
+            font-weight: 700;
+            font-size: 106.496px;
+            text-align: center;
+            text-transform: uppercase;
+            line-height: 75%;
+            color: $main-color1;
+    
+            &_yellow {
+                color: $favorite-color;
+            }
+        }
+    }
+}
