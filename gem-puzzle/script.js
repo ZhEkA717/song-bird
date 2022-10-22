@@ -572,6 +572,7 @@ function saveRecord(){
 }
 
 function sortLocalStorageArr(arr) {
+   if(arr){
     const n = arr.length;
     for (let i = 0; i < n - 1; i++) {
         for (let j = 0; j < n - 1 - i; j++) {
@@ -602,6 +603,10 @@ function sortLocalStorageArr(arr) {
         }
     }
     return arr;
+   }else{
+    return false;
+   }
+    
 }
 
 function showTableRecord() {
