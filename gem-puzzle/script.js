@@ -1,3 +1,4 @@
+// alert("Не успел доделать adaptive и drag&drop, проверь позже или перепроверь в конце кроссчек")
 const wrapper = document.createElement("div");
 wrapper.classList.add(".wrapper");
 document.body.prepend(wrapper);
@@ -131,10 +132,10 @@ function findChildEmptyCeil(size) {
     };
 }
 
-wrapper.addEventListener("click", funMovingCell);
 let audioCell = new Audio();
 audioCell.src = "audio-cell.mp3";
 
+wrapper.addEventListener("click", funMovingCell);
 function funMovingCell(EO) {
     const cells = document.querySelectorAll(".cell");
     const movesCount = document.querySelector(".moves span");
@@ -176,7 +177,7 @@ function funMovingCell(EO) {
 
         elEvent.addEventListener("transitionend", funTransitionEnd);
 
-        function funTransitionEnd(e) {
+        function funTransitionEnd() {
             const range = document.querySelector(".range");
             if(range.value==10){
                 audioCell.play();
@@ -201,7 +202,111 @@ function funMovingCell(EO) {
 }
 
 
+// window.addEventListener("mousedown", cellMouseDown);
+// window.addEventListener("mouseup", cellMouseUp);
 
+// let x = 0;
+// let y = 0;
+// let glob;
+// let leftGr;
+// let rightGr;
+// let upGr;
+// let downGr;
+// function cellMouseDown(EO) {
+//     // wrapper.removeEventListener("mousedown", funMovingCell);
+//     EO.preventDefault();
+//     const cells = document.querySelectorAll(".cell");
+//     let emptyCell = document.querySelector(".empty-cell");
+
+//     let {
+//         prevChild,
+//         nextChild,
+//         upChild,
+//         downChild
+//     } = findChildEmptyCeil(Math.pow(cells.length, 0.5));
+    
+//     let cell = EO.target;
+//     cell.style.zIndex=99;
+//     if(cell == prevChild || cell == nextChild){
+//         x = EO.pageX - cell.offsetLeft;
+//     }
+//     if(cell == upChild || cell == downChild){
+//         y = EO.pageY - cell.offsetTop;
+//     }
+//     window.addEventListener("mousemove", cellMouseMove);
+//         leftGr = cell.offsetLeft;
+//         rightGr = emptyCell.offsetLeft;
+//         upGr = cell.offsetTop;
+//         downGr = emptyCell.offsetTop;
+//     function cellMouseMove(EO) {
+//         EO.preventDefault();
+//         if(cell == prevChild){
+//             if(EO.pageX -x >leftGr && EO.pageX -x < rightGr+1){
+//                 cell.style.left = (EO.pageX - x) + 'px';
+//             }
+//         }else if(cell == nextChild){
+//             if(EO.pageX -x < leftGr && EO.pageX -x > rightGr+1){
+//                 cell.style.left = (EO.pageX - x) + 'px';
+//             }
+//         }else if(cell == upChild){
+//             if(EO.pageY -y >upGr && EO.pageY -y < downGr){
+//                 cell.style.top = (EO.pageY - y) + 'px';
+//             }
+//         }else if(cell == downChild){
+//             if(EO.pageY - y < upGr && EO.pageY -y > downGr){
+//                 cell.style.top = (EO.pageY - y) + 'px';
+//             }
+//         }
+//     }
+//     glob = cellMouseMove;
+// }
+
+// function cellMouseUp(EO) {
+//     EO.preventDefault();
+
+//     let left = EO.target.offsetLeft,
+//     top = EO.target.offsetTop;
+
+//     const cells = document.querySelectorAll(".cell");
+//     const empty = document.querySelector(".empty-cell");
+    
+//     let {
+//         prevChild,
+//         nextChild,
+//         upChild,
+//         downChild
+//     } = findChildEmptyCeil(Math.pow(cells.length, 0.5));
+
+//     if(Math.abs(EO.target.offsetLeft-empty.offsetLeft)<=empty.offsetWidth/2 ){
+//         left = empty.offsetLeft;
+//     }else{
+//         if(EO.target == nextChild){
+//             left = Math.abs(empty.offsetLeft + empty.offsetWidth);
+//         }else{
+//             left = Math.abs(empty.offsetLeft - empty.offsetWidth);
+//         }
+//     }
+
+//     if(Math.abs(EO.target.offsetTop-empty.offsetTop)<=empty.offsetHeight/2){
+//         top = empty.offsetTop;
+//     }else{
+//         if(EO.target == downChild){
+//             top = Math.abs(empty.offsetTop + empty.offsetHeight);
+//         }else{
+//             top = Math.abs(empty.offsetTop - empty.offsetHeight);
+//         }
+//     }
+
+
+//     if (EO.target == prevChild || EO.target == nextChild ||
+//         EO.target == upChild || EO.target == downChild) {
+//         EO.target.style.left = left + "px";
+//         EO.target.style.top = top + "px";
+//     }
+
+    
+//     window.removeEventListener('mousemove', glob);
+// }
 
 const menu = document.createElement("div");
 const shuffle = document.createElement("div");
@@ -425,10 +530,10 @@ save.addEventListener("click", (e) => {
             fieldBlock.style.display = "none";
             saveIsDisabled();
             funShuffleAndRestart();
-        }, 1000);
 
-        document.querySelector("*").style.cursor = "auto";
-        save.style.cursor = "pointer";
+            document.querySelector("*").style.cursor = "auto";
+            save.style.cursor = "";
+        }, 1000);
     }
 
 });
@@ -524,7 +629,7 @@ function getDataofLS() {
         minuteState,
         secondState,
         fieldInnerState,
-        otherSizeState,
+        otherSizeState
     } = JSON.parse(gameState);
 
     const save = document.querySelector(".save"),
@@ -532,7 +637,8 @@ function getDataofLS() {
         minuteElement = document.querySelector(".minute"),
         secondElement = document.querySelector(".second"),
         field = document.querySelector(".field"),
-        otherSize = document.querySelector(".other-size");
+        otherSize = document.querySelector(".other-size"),
+        sound = document.querySelector(".sound");
 
     if (saveState) {
         save.classList.add("save-active");
@@ -545,6 +651,8 @@ function getDataofLS() {
     second = +secondState;
     field.innerHTML = fieldInnerState;
     otherSize.innerHTML = otherSizeState;
+    sound.innerHTML = ` <input class="range" type="range"  min="0" max="10" value="0"
+    step="1">`;
 }
 getDataofLS();
 
@@ -622,9 +730,7 @@ function showTableRecord() {
             divBox.style.alignItems = 'center';
             divBox.style.paddingLeft = 20 + 'px';
             divBox.style.marginBottom = 20 + 'px';
-    
-            // var colors = color();
-    
+        
             var divCircle = document.createElement('div');
             divCircle.style.position = 'absolute';
             divCircle.style.width = 60 + 'px';
@@ -675,8 +781,6 @@ function showTableRecord() {
                 <img style = "margin-right:10px" width="30" src="tap.png">${mas[i].moves}
                  &#9200; ${mas[i].minute}:${mas[i].second} 	
                 &#128270; ${mas[i].sizeState}`; //nik
-
-                console.log(mas[i].moves);
     
             divBox.appendChild(divCircle);
             divBox.appendChild(divRec);
@@ -722,3 +826,14 @@ tableRec.addEventListener("click",(e)=>{
     }
 });
 
+
+const m727 = window.matchMedia('(max-width: 727px)');
+
+window.addEventListener("resize",()=>{
+    if(m727.matches){
+        addFieldInPage(4, 600);
+    }else{
+        addFieldInPage(4, 700);
+ 
+    }
+})
