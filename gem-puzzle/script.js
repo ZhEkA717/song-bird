@@ -1,4 +1,24 @@
-// alert("Не успел доделать adaptive и drag&drop, проверь позже или перепроверь в конце кроссчек")
+alert("Не успел доделать adaptive и drag&drop, проверь позже или перепроверь в конце кроссчек")
+
+const tableRecord = document.createElement("div");
+const closeTableRec = document.createElement("div");
+const innertableRec = document.createElement("div");
+const records = document.createElement("div");
+
+tableRecord.id = "tableRec";
+closeTableRec.id = "closeTableRec";
+innertableRec.id = "innertableRec";
+records.id = "records";
+
+innertableRec.append(records);
+
+tableRecord.append(closeTableRec);
+tableRecord.append(innertableRec);
+
+document.body.append(tableRecord);
+
+closeTableRec.innerHTML = "&times;";
+
 const wrapper = document.createElement("div");
 wrapper.classList.add(".wrapper");
 document.body.prepend(wrapper);
@@ -834,6 +854,6 @@ window.addEventListener("resize",()=>{
         addFieldInPage(4, 600);
     }else{
         addFieldInPage(4, 700);
- 
+
     }
 })
