@@ -1,5 +1,3 @@
-alert("Не успел доделать adaptive и drag&drop, проверь позже или перепроверь в конце кроссчек")
-
 const tableRecord = document.createElement("div");
 const closeTableRec = document.createElement("div");
 const innertableRec = document.createElement("div");
@@ -373,7 +371,7 @@ otherSize.classList.add("other-size");
 
 document.body.prepend(otherSize);
 
-otherSize.innerHTML = `Other size:  <span>3&times;3</span>  <span class="other-size_active">4&times;4</span>  <span>5&times;5</span>  <span>6&times;6</span>  <span>7&times;7</span>  <span>8&times;8</span>`;
+otherSize.innerHTML = `<div>Other size:  <span>3&times;3</span>  <span class="other-size_active">4&times;4</span>  <span>5&times;5</span>  <span>6&times;6</span>  <span>7&times;7</span>  <span>8&times;8</span></div>`;
 
 const sound = document.createElement("div");
 sound.classList.add("sound");
@@ -847,12 +845,43 @@ tableRec.addEventListener("click",(e)=>{
 
 
 const m727 = window.matchMedia('(max-width: 727px)');
+const m610 = window.matchMedia('(max-width: 610px)');
+const m520 = window.matchMedia('(max-width: 520px)');
+const m410 = window.matchMedia('(max-width: 410px)');
 
 window.addEventListener("resize",()=>{
+    resizeScreen();
+})
+
+function resizeScreen(){
+    const act = +document.querySelector(".other-size_active").innerHTML[0];
+
     if(m727.matches){
-        addFieldInPage(4, 600);
+        addFieldInPage(act, 600);
     }else{
-        addFieldInPage(4, 700);
+        addFieldInPage(act, 700);
+        innertableRec.style.width ="70%"
+    }
+
+    if(m610.matches){
+        addFieldInPage(act, 510);
+        innertableRec.style.width ="85%"
+        records.style.fontSize = "24px";
+    }
+
+    if(m520.matches){
+        addFieldInPage(act, 400);
+        innertableRec.style.width ="80%"
+        records.style.fontSize = "20px";
+    }
+    if(m410.matches){
+        addFieldInPage(act, 300);
+        innertableRec.style.width ="95%";
+        closeTableRec.style.fontSize="30px";
+        records.style.fontSize = "15px";
 
     }
-})
+}
+resizeScreen();
+getDataofLS();
+
