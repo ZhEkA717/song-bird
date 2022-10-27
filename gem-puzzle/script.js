@@ -86,10 +86,17 @@ function addFieldInPage(size, fieldSize) {
         if (item.innerHTML === "0") {
             item.classList.add("empty-cell");
             item.innerHTML = "";
+            item.addEventListener("drop",emptyDrop);
+            item.addEventListener("dragover",emptyDragOver);
+            item.addEventListener("dragenter",emptyDragEnter);
+            item.addEventListener("dragleave",emptyDragLeave);
         }
 
         if (!item.classList.contains("empty-cell")) {
+            item.draggable="true";
             item.style.outline = "1px solid black";
+            item.addEventListener('dragstart', handleDragStart);
+            item.addEventListener('dragend', handleDragEnd);
         }
     });
     return size;
@@ -201,7 +208,14 @@ function funMovingCell(EO) {
             }
 
             let clonedCell = cell.cloneNode(true);
+            clonedCell.addEventListener("drop",emptyDrop);
+            clonedCell.addEventListener("dragover",emptyDragOver);
+            clonedCell.addEventListener("dragenter",emptyDragEnter);
+            clonedCell.addEventListener("dragleave",emptyDragLeave);
+
             let clonedElEvent = elEvent.cloneNode(true);
+            clonedElEvent.addEventListener('dragstart', handleDragStart);
+            clonedElEvent.addEventListener('dragend', handleDragEnd);
 
             elEvent.parentElement.replaceChild(clonedCell, elEvent);
             cell.parentElement.replaceChild(clonedElEvent, cell);
@@ -217,113 +231,79 @@ function funMovingCell(EO) {
         };
     }
 }
+let elemHandleDragStart;
+function handleDragStart(e) {
+    this.style.opacity = '0.4';
+    elemHandleDragStart = e;
+}
 
+function handleDragEnd(e) {
+    this.style.opacity = '1';
+}
 
-// window.addEventListener("mousedown", cellMouseDown);
-// window.addEventListener("mouseup", cellMouseUp);
+function emptyDragOver(e){
+    const cells = document.querySelectorAll(".cell");
+    let {
+        prevChild,
+        nextChild,
+        upChild,
+        downChild
+    } = findChildEmptyCeil(Math.pow(cells.length, 0.5));
+    if (elemHandleDragStart.target == prevChild || elemHandleDragStart.target == nextChild ||
+        elemHandleDragStart.target == upChild || elemHandleDragStart.target == downChild) {
+            e.preventDefault(); 
+    }
+}
 
-// let x = 0;
-// let y = 0;
-// let glob;
-// let leftGr;
-// let rightGr;
-// let upGr;
-// let downGr;
-// function cellMouseDown(EO) {
-//     // wrapper.removeEventListener("mousedown", funMovingCell);
-//     EO.preventDefault();
-//     const cells = document.querySelectorAll(".cell");
-//     let emptyCell = document.querySelector(".empty-cell");
+function emptyDragEnter(e){
+    const cells = document.querySelectorAll(".cell");
+    let {
+        prevChild,
+        nextChild,
+        upChild,
+        downChild
+    } = findChildEmptyCeil(Math.pow(cells.length, 0.5));
+    if (elemHandleDragStart.target == prevChild || elemHandleDragStart.target == nextChild ||
+        elemHandleDragStart.target == upChild || elemHandleDragStart.target == downChild) {
+        const empty = document.querySelector(".empty-cell");
+        if(empty == e.target){
+            empty.style.border = "5px dashed rgb(99, 153, 99)";
+        }
+    }
+}
 
-//     let {
-//         prevChild,
-//         nextChild,
-//         upChild,
-//         downChild
-//     } = findChildEmptyCeil(Math.pow(cells.length, 0.5));
+function emptyDragLeave(e){
+    const empty = document.querySelector(".empty-cell");
+    if(empty == e.target){
+        empty.style.border = "";
+    } 
+}
+
+function emptyDrop(e){
+    e.preventDefault();
+    const cells = document.querySelectorAll(".cell");
+    const empty = document.querySelector(".empty-cell");
+    let {
+        prevChild,
+        nextChild,
+        upChild,
+        downChild
+    } = findChildEmptyCeil(Math.pow(cells.length, 0.5));
     
-//     let cell = EO.target;
-//     cell.style.zIndex=99;
-//     if(cell == prevChild || cell == nextChild){
-//         x = EO.pageX - cell.offsetLeft;
-//     }
-//     if(cell == upChild || cell == downChild){
-//         y = EO.pageY - cell.offsetTop;
-//     }
-//     window.addEventListener("mousemove", cellMouseMove);
-//         leftGr = cell.offsetLeft;
-//         rightGr = emptyCell.offsetLeft;
-//         upGr = cell.offsetTop;
-//         downGr = emptyCell.offsetTop;
-//     function cellMouseMove(EO) {
-//         EO.preventDefault();
-//         if(cell == prevChild){
-//             if(EO.pageX -x >leftGr && EO.pageX -x < rightGr+1){
-//                 cell.style.left = (EO.pageX - x) + 'px';
-//             }
-//         }else if(cell == nextChild){
-//             if(EO.pageX -x < leftGr && EO.pageX -x > rightGr+1){
-//                 cell.style.left = (EO.pageX - x) + 'px';
-//             }
-//         }else if(cell == upChild){
-//             if(EO.pageY -y >upGr && EO.pageY -y < downGr){
-//                 cell.style.top = (EO.pageY - y) + 'px';
-//             }
-//         }else if(cell == downChild){
-//             if(EO.pageY - y < upGr && EO.pageY -y > downGr){
-//                 cell.style.top = (EO.pageY - y) + 'px';
-//             }
-//         }
-//     }
-//     glob = cellMouseMove;
-// }
 
-// function cellMouseUp(EO) {
-//     EO.preventDefault();
+    if (elemHandleDragStart.target == prevChild || elemHandleDragStart.target == nextChild ||
+        elemHandleDragStart.target == upChild || elemHandleDragStart.target == downChild) {
+        if (empty == e.target) {
+            empty.style.border = "";
+            empty.removeEventListener("drop", emptyDrop);
+            empty.removeEventListener("dragover", emptyDragOver);
+            empty.removeEventListener("dragenter", emptyDragEnter);
+            empty.removeEventListener("dragleave", emptyDragLeave);
+            funMovingCell(elemHandleDragStart);
+        }
+    }
 
-//     let left = EO.target.offsetLeft,
-//     top = EO.target.offsetTop;
-
-//     const cells = document.querySelectorAll(".cell");
-//     const empty = document.querySelector(".empty-cell");
-    
-//     let {
-//         prevChild,
-//         nextChild,
-//         upChild,
-//         downChild
-//     } = findChildEmptyCeil(Math.pow(cells.length, 0.5));
-
-//     if(Math.abs(EO.target.offsetLeft-empty.offsetLeft)<=empty.offsetWidth/2 ){
-//         left = empty.offsetLeft;
-//     }else{
-//         if(EO.target == nextChild){
-//             left = Math.abs(empty.offsetLeft + empty.offsetWidth);
-//         }else{
-//             left = Math.abs(empty.offsetLeft - empty.offsetWidth);
-//         }
-//     }
-
-//     if(Math.abs(EO.target.offsetTop-empty.offsetTop)<=empty.offsetHeight/2){
-//         top = empty.offsetTop;
-//     }else{
-//         if(EO.target == downChild){
-//             top = Math.abs(empty.offsetTop + empty.offsetHeight);
-//         }else{
-//             top = Math.abs(empty.offsetTop - empty.offsetHeight);
-//         }
-//     }
-
-
-//     if (EO.target == prevChild || EO.target == nextChild ||
-//         EO.target == upChild || EO.target == downChild) {
-//         EO.target.style.left = left + "px";
-//         EO.target.style.top = top + "px";
-//     }
-
-    
-//     window.removeEventListener('mousemove', glob);
-// }
+}
 
 const menu = document.createElement("div");
 const shuffle = document.createElement("div");
@@ -670,6 +650,21 @@ function getDataofLS() {
     otherSize.innerHTML = otherSizeState;
     sound.innerHTML = ` <input class="range" type="range"  min="0" max="10" value="0"
     step="1">`;
+
+    const cells = document.querySelectorAll(".cell");
+    cells.forEach(item => {
+        if (item.innerHTML === "") {
+            item.addEventListener("drop",emptyDrop);
+            item.addEventListener("dragover",emptyDragOver);
+            item.addEventListener("dragenter",emptyDragEnter);
+            item.addEventListener("dragleave",emptyDragLeave);
+        }
+        if (!item.classList.contains("empty-cell")) {
+            item.style.outline = "1px solid black";
+            item.addEventListener('dragstart', handleDragStart);
+            item.addEventListener('dragend', handleDragEnd);
+        }
+    });
 }
 getDataofLS();
 
