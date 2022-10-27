@@ -125,6 +125,12 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+.other-size div:first-child{
+   width: 80%;
+   display:flex;
+   justify-content: space-between;
+   align-items:center;
+}
 
 .other-size span {
     color: rgb(99, 153, 99);
@@ -301,4 +307,113 @@ input[type=range]::-moz-range-thumb {
     padding-bottom: 30px;
 }
 
+@media (max-width:727px){
+    .menu{
+        width: 600px;
+    }
+    .other-size{
+        width: 600px;
+        top: 780px;
+    }
+}
+
+@media (max-width:610px){
+    .menu{
+        width: 515px;
+    }
+    .other-size{
+        width: 505px;
+        top: 675px;
+    }
+}
+@media (max-width:520px){
+    .menu{
+        width: 400px;
+    }
+
+    .shuffle{
+        width: 170px;
+    }
+    .stop{
+        width: 50px;
+    }
+    .save{
+        width: 50px;
+    }
+    .result{
+        width: 110px;
+    }
+    .other-size{
+        width: 400px;
+       flex-direction: column;
+       top: 550px;
+       align-items: center;
+       justify-content: space-between;
+       height: 110px;
+    }
+    .other-size div:first-child{
+        width: 100%;
+    }
+    .sound{
+        align-self: flex-end;
+        justify-content: center;
+        width: 100px;
+    }
+}
+
+@media (max-width:410px){
+    .menu{
+        flex-wrap: wrap;
+        width: 90%;
+    }
+
+    .field{
+        top: 143px;
+    }
+
+    .shuffle{
+        width: 50%;
+        order: 1;
+        margin-bottom: 10px;
+    }
+    .stop{
+        width: 50px;
+        order: 3;
+        width: 40%;
+    }
+    .save{
+        width: 50px;
+        order: 4;
+        width: 40%;
+    }
+    .result{
+        width: 45%;
+        order: 2;
+    }
+    .other-size{
+        width: 300px;
+       flex-direction: column;
+       top: 450px;
+       align-items: center;
+       justify-content: space-between;
+       height: 110px;
+    }
+    .other-size div:first-child{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .sound{
+        align-self: flex-end;
+        justify-content: center;
+        width: 100px;
+    }
+
+    .movesAndTime{
+        width: 300px;
+        top: 105px;
+    }
+    .moves, .time-block{
+        font-size: 25px;
+    }
+}
 
