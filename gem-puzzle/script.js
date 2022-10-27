@@ -854,16 +854,15 @@ function resizeScreen(){
     if(m727.matches){
         addFieldInPage(act, 600);
     }else{
+
         addFieldInPage(act, 700);
         innertableRec.style.width ="70%"
     }
-
     if(m610.matches){
         addFieldInPage(act, 510);
         innertableRec.style.width ="85%"
         records.style.fontSize = "24px";
     }
-
     if(m520.matches){
         addFieldInPage(act, 400);
         innertableRec.style.width ="80%"
@@ -874,7 +873,6 @@ function resizeScreen(){
         innertableRec.style.width ="95%";
         closeTableRec.style.fontSize="30px";
         records.style.fontSize = "15px";
-
     }
 }
 resizeScreen();
