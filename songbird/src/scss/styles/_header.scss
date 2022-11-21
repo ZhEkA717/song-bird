@@ -1,0 +1,51 @@
+.header {
+    width: 100%;
+    margin-top: 20px;
+
+    .logo-and-score {
+        display: flex;
+        justify-content: space-between;
+
+        .logo {
+            width: 200px;
+            height: 55px;
+            background: url("../assets/icons/logo.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .score {
+            display: none;
+            font-size: 20px;
+            align-self: flex-end;
+            font-weight: 500;
+            color: $text-color;
+            margin-bottom: 10px;
+        }
+    }
+
+    .questions {
+        display: none;
+        background-color: $bj-question-color;
+        margin-top: 14px;
+        border-radius: 5px;
+
+        &__items {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            flex: auto;
+            list-style-type: none;
+            color: $text-color;
+            text-align: center;
+            padding: 10px;
+            &_active {
+                background-color: $bj-question-color-hover;
+                border-radius: 5px;
+            }
+        }
+    }
+}

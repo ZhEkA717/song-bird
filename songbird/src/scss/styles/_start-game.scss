@@ -1,0 +1,109 @@
+.start-game{
+    width: 100%;
+
+    &__btn{
+        margin-top: 20px;
+        cursor: pointer;
+        width: 100%;
+        background-color: $bj-question-color;
+        border: 1px solid #444;
+        color: #fff;
+        padding: 8px;
+        border-radius: 5px;
+        transition-property: border-color;
+        transition-duration: .5s;
+        transition-property: background-color;
+        transition-duration: .5s;
+
+        &:hover{
+            background-color:$bj-question-color-hover;
+        }
+    }
+
+    &__line-scroll {
+        display: block;
+        margin: 5px auto;
+        width: 100%;
+        height: 8px;
+        background: #F5F7F6;
+        border-radius: 2px;
+        position: relative;
+        border: 1px solid transparent;
+        background: #444;
+        box-shadow: inset 0px 0px 0px 100vw #303030;
+    }
+
+    input[type=range] {
+        width: 100%;
+        height: 8px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    
+    input[type=range]::-webkit-slider-runnable-track {
+        border-radius: 5px;
+        height: 6px;
+    }
+    
+    input[type=range]::-webkit-slider-thumb {
+        background: $bj-question-color;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 25%;
+        height: 6px;
+        -webkit-appearance: none;
+    
+        &:hover {
+            background-color: $bj-question-color-hover;
+        }
+    }
+    
+    input[type=range]::-moz-range-track {
+        border-radius: 5px;
+        height: 6px;
+        background-color: $bj-question-color;
+    }
+    
+    input[type=range]::-moz-range-thumb {
+        cursor: pointer;
+    }
+    
+    footer{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        align-items: center;
+    }
+
+    &__developed{
+        transition: .5s;
+        img{
+            width: 36px;
+        }
+        color: $text-color;
+        a{
+            width: 250px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: $text-color;
+            text-decoration: none;
+        }
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+
+    &__curse{
+        transition: .5s;
+        width: 120px;
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+
+}
+
+

@@ -1,0 +1,20 @@
+.language{
+    font-size: 20px;
+    color: lightgrey;
+    align-self: flex-end;
+    margin-right: 5px;
+    .ru{
+        margin-right: 10px;
+    }
+
+    .eng{
+        margin-left: 10px;
+    }
+
+    span:hover,.active{
+        cursor: pointer;
+        transition: .5s;
+        border-bottom: 1px solid white;
+        color: white;
+    }
+}

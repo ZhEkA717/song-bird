@@ -1,0 +1,387 @@
+@media (max-width: 1150px) {
+    .answer-and-player {
+        .answers {
+            width: 38.5%;
+        }
+
+        .card {
+            width: 58.5%;
+        }
+    }
+    .nav-btns {
+        &__back{
+            width: 38.5%;
+        }
+        &__next {
+            width: 58.5%;
+        }
+    }
+    .slider{
+        .container{
+            padding-left: 170px;
+            padding-right: 170px;
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    .answer-and-player {
+        .answers {
+            width: 28.5%;
+        }
+
+        .card {
+            width: 68.5%;
+        }
+    }
+    .nav-btns {
+        &__back{
+            width: 28.5%;
+        }
+        &__next {
+            width: 68.5%;
+        }
+    }
+    .slider{
+        .container{
+            padding-left: 150px;
+            padding-right: 150px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .answer-and-player {
+        .answers {
+            width: 38.5%;
+        }
+
+        .card {
+            width: 58.5%;
+            min-height: 306px;
+            height: auto;
+            padding-bottom: 15px;
+
+            &__player {
+                flex-direction: column;
+                align-items: center;
+
+                &__image {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    .nav-btns {
+        &__back{
+            width: 38.5%;
+        }
+        &__next {
+            width: 58.5%;
+        }
+    }
+
+    .slider{
+        .container{
+            padding-left: 130px;
+            padding-right: 130px;
+        }
+    }
+}
+
+@media (max-width: 715px) {
+    .audio-player {
+        &__volume:hover {
+            input[type=range] {
+                width: 40px;
+            }
+        }
+    }
+    .slider{
+        .container{
+            padding-left: 110px;
+            padding-right: 110px;
+        }
+    }
+    .game-over{
+        &__title{
+            font-size: 60px;
+        }
+    
+        &__result{
+            text-align: center;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .answer-and-player {
+        flex-direction: column;
+
+        .answers {
+            width: 100%;
+        }
+
+        .card {
+            margin-top: 25px;
+            width: 100%;
+        }
+    }
+
+    .nav-btns {
+        flex-direction: column-reverse;
+        &__back{
+            width: 100%;
+        }
+        &__next {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+    }
+
+    .audio-player {
+        &_answer {
+            .audio-player__volume:hover {
+                input[type=range] {
+                    width: 70px;
+                }
+            }
+        }
+    }
+
+    .slider{
+        .container{
+            padding-left: 90px;
+            padding-right: 90px;
+        }
+    }
+}
+
+@media (max-width: 615px) {
+    .container {
+        width: 90%;
+    }
+
+    .audio-player {
+        &__volume:hover {
+            input[type=range] {
+                width: 70px;
+            }
+        }
+    }
+
+    .what-bird {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        min-height: 306px;
+        padding-bottom: 30px;
+
+        &__player {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+
+        &__img {
+            margin-left: 0;
+        }
+    }
+
+    .answer-and-player {
+        .card__player__audio {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    .slider{
+        .container{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+}
+
+@media (max-width: 520px) {
+    .container {
+        width: 100%;
+    }
+
+    .header {    
+        .logo-and-score {
+            .logo {
+                width: 160px;
+                height: 44px;
+                margin-bottom: -9px;
+            }
+        }
+    }
+
+    .what-bird {
+        &__player {
+            .title {
+                margin-left: auto;
+                text-align: center;
+            }
+
+            hr {
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .answer-and-player {
+        .card {
+            &__player {
+                &__audio {
+                    .title {
+                        text-align: center;
+                    }
+
+                    .species {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .slider{
+        .container{
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+        .card__player__audio {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    .game-over{
+        &__title{
+            font-size: 50px;
+        }
+        &__result{
+            font-size: 17px;
+        }
+        &__restart{
+            margin-top: 40px;
+        }
+    }
+
+    .start-game{
+        footer{
+            flex-direction: column;
+            align-items: flex-start
+            
+        }
+    
+        &__curse{
+            width: 100px;
+           margin-top: 20px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .header {    
+        .logo-and-score {
+            .logo {
+                width: 120px;
+                height: 33px;
+                margin-bottom: -9px;
+            }
+        }
+    }
+    .audio-player {
+        &__volume:hover {
+            input[type=range] {
+                width: 40px;
+            }
+        }
+
+        &_answer {
+            .audio-player__volume:hover {
+                input[type=range] {
+                    width: 40px;
+                }
+            }
+        }
+    }
+
+    .game-over{
+        &__title{
+            font-size: 46px;
+        }
+        &__result{
+            font-size: 15px;
+        }
+        &__restart{
+            margin-top: 40px;
+        }
+    }
+}
+@media (max-width: 375px) {
+
+    .audio-player {
+        flex-wrap: wrap;
+        &__volume{
+            width: 100%;
+            margin-top: 15px;
+    
+            flex-direction: row-reverse;
+            &__range{
+                width: 100%;
+            }
+            &:hover {
+                input[type=range] {
+                    width: 100%;
+                }
+            }
+        }
+        
+        &_answer {
+            .audio-player__volume:hover {
+                input[type=range] {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .answer-and-player {
+        .card {
+            &__descr{
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .what-bird{
+        padding-bottom: 10px;
+    }
+}
+
+@media (max-width: 315px){
+    .header{
+        .logo-and-score{
+            .score{
+                margin-top: 0px;
+            }
+            flex-direction: column;
+        }
+    }
+    .game-over{
+        &__title{
+            font-size: 32px;
+        }
+        &__result{
+            font-size: 15px;
+        }
+        &__restart{
+            margin-top: 40px;
+        }
+    }
+}

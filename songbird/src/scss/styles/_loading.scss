@@ -1,0 +1,78 @@
+#loader {
+    display: flex;
+    margin-left: 10px;
+
+    #one,
+    #one1,
+    #one2,
+    #one3,
+    #one4 {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        position: relative;
+        margin: 5px;
+    }
+
+
+    #one {
+        background-color: rgba($bj-question-color, 0.8);
+    }
+
+    #one1 {
+        background-color: rgba($bj-question-color, 0.6);
+    }
+
+    #one2 {
+        background-color: rgba($bj-question-color, 0.4);
+    }
+}
+
+
+
+@keyframes loading {
+    from {
+        width: 10px;
+        height: 10px;
+        background-color: rgba(3, 3, 3, 0.3);
+    }
+
+    20% {
+        width: 30px;
+        height: 30px;
+        background-color: rgba(3, 3, 3, 0.0001);
+    }
+
+    to {
+        width: 30px;
+        height: 30px;
+        background-color: rgba(3, 3, 3, 0.0001);
+    }
+}
+
+#two,
+#two1,
+#two2,
+#two3,
+#two4 {
+    background-color: rgba(3, 3, 3, 0.3);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#two {
+    animation: loading 1s linear infinite;
+}
+
+#two1 {
+    animation: loading 1s linear 0.2s infinite;
+}
+
+#two2 {
+    animation: loading 1s linear 0.4s infinite;
+}

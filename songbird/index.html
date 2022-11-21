@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SongBird &copy;</title>
+    <link rel="stylesheet" href="./src/css/index.min.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
+</head>
+
+<body>
+    <div class="songbird-app">
+        <div class="container">
+            <header class="header">
+                <div class="logo-and-score">
+                    <div class="logo"></div>
+                    <div class="language">
+                        <span class="ru active">RU</span>|<span class="eng">ENG</span>
+                    </div>
+                    <h5 class="score"><b>Счёт:  </b><span>0</span></h5>
+                </div>
+                <div class="questions">
+                    <ul class="questions__items">
+                        <li class="questions__item questions__item_active ">Разминка</li>
+                        <li class="questions__item">Воробьиные</li>
+                        <li class="questions__item">Лесные птицы</li>
+                        <li class="questions__item">Певчие птицы</li>
+                        <li class="questions__item">Хищные птицы</li>
+                        <li class="questions__item">Морские птицы</li>
+                    </ul>
+                </div>
+            </header>
+            <main>
+                <section class="what-bird">
+                    <div class="what-bird__img">
+                        <img src="./src/assets/images/bird-hide.jpg" alt="bird-hide">
+                    </div>
+                    <div class="what-bird__player">
+                        <h3 class="title">******</h3>
+                        <hr>
+                        <div class="audio-player">
+                            <div class="audio-player__btn-range">
+                                <div class="audio-player__button">
+                                    <img class="play" src="./src/assets/icons/play.svg" alt="play/pause">
+                                </div>
+                                <div class="audio-player__time-range">
+                                    <input type="range" min="0" max="100" value="0" name="range" step="1" />
+                                    <div class="current-time">
+                                        <span class="current-time__minute">00</span>
+                                        :
+                                        <span class="current-time__second">00</span>
+                                    </div>
+                                    <div class="time">
+                                        <span class="time__minute">00</span>
+                                        :
+                                        <span class="time__second">00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="audio-player__volume">
+                                <div class="audio-player__volume__range">
+                                    <input type="range" min="0" max="10" value="10" name="range" step="1" />
+                                </div>
+                                <div class="audio-player__volume__svg">
+                                    <svg id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" fill="white">
+                                        <path d="M2,6A2,2,0,0,0,0,8v8a2,2,0,0,0,2,2H4.8L12,23.977V.017L4.8,6Z" />
+                                        <path class="m0"
+                                            d="M20,12a5.006,5.006,0,0,0-5-5H14V9h1a3,3,0,0,1,0,6H14v2h1A5.006,5.006,0,0,0,20,12Z" />
+                                        <path class="m5" d="M15,3H14V5h1a7,7,0,0,1,0,14H14v2h1A9,9,0,0,0,15,3Z" />
+                                        <path class="m0-none" d="M 0 0 L 50 50" stroke="#fff" stroke-width="2" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <audio src=""></audio>
+                        </div>
+                        <div class="what-bird__loading">
+                            Loading
+                            <div id="loader">
+                                <div id="one">
+                                    <div id="two"></div>
+                                </div>
+                                <div id="one1">
+                                    <div id="two1"></div>
+                                </div>
+                                <div id="one2">
+                                    <div id="two2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <secttion class="answer-and-player">
+                    <div class="answers">
+                        <ul class="answers__items">
+                            <li class="answers__item">
+                                <span class="answers__item__btn"></span>
+                                <span class="answers__item__name"></span>
+                            </li>
+                            <li class="answers__item">
+                                <span class="answers__item__btn"></span>
+                                <span class="answers__item__name"></span>
+                            </li>
+                            <li class="answers__item">
+                                <span class="answers__item__btn"></span>
+                                <span class="answers__item__name"></span>
+                            </li>
+                            <li class="answers__item">
+                                <span class="answers__item__btn"></span>
+                                <span class="answers__item__name"></span>
+                            </li>
+                            <li class="answers__item">
+                                <span class="answers__item__btn"></span>
+                                <span class="answers__item__name"></span>
+                            </li>
+                            <li class="answers__item">
+                                <span class="answers__item__btn"></span>
+                                <span class="answers__item__name"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card__start">
+                            Послушайте плеер.<br>
+                            Выберите птицу из списка.
+                        </div>
+                        <div class="card__player">
+                            <div class="card__player__image">
+                                <img src="" alt="bird">
+                            </div>
+                            <div class="card__player__audio">
+                                <h3 class="title"></h3>
+                                <hr>
+                                <h5 class="species"></h5>
+                                <hr>
+                                <div class="audio-player audio-player_answer">
+                                    <div class="audio-player__btn-range">
+                                        <div class="audio-player__button">
+                                            <img class="play" src="./src/assets/icons/play.svg" alt="play/pause">
+                                        </div>
+                                        <div class="audio-player__time-range">
+                                            <input type="range" min="0" max="100" value="0" name="range" step="1" />
+                                            <div class="current-time">
+                                                <span class="current-time__minute">00</span>
+                                                :
+                                                <span class="current-time__second">00</span>
+                                            </div>
+                                            <div class="time">
+                                                <span class="time__minute">00</span>
+                                                :
+                                                <span class="time__second">00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="audio-player__volume">
+                                        <div class="audio-player__volume__range">
+                                            <input type="range" min="0" max="10" value="10" name="range" step="1" />
+                                        </div>
+                                        <div class="audio-player__volume__svg">
+                                            <svg id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" fill="white">
+                                                <path
+                                                    d="M2,6A2,2,0,0,0,0,8v8a2,2,0,0,0,2,2H4.8L12,23.977V.017L4.8,6Z" />
+                                                <path class="m0"
+                                                    d="M20,12a5.006,5.006,0,0,0-5-5H14V9h1a3,3,0,0,1,0,6H14v2h1A5.006,5.006,0,0,0,20,12Z" />
+                                                <path class="m5"
+                                                    d="M15,3H14V5h1a7,7,0,0,1,0,14H14v2h1A9,9,0,0,0,15,3Z" />
+                                                <path class="m0-none" d="M 0 0 L 50 50" stroke="#fff"
+                                                    stroke-width="2" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <audio src=""></audio>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__descr">
+                        </div>
+                    </div>
+                </secttion>
+                <div class="nav-btns">
+                    <button class="nav-btns__back">Вернуться на главную</button>
+                    <button class="nav-btns__next">Следующий уровень</button>
+                </div>
+            </main>
+            <div class="start-game">
+                <div class="wall-wrapper">
+                    <div id="wall"></div>
+                </div>
+                <input class="start-game__line-scroll" type="range" min="0" max="100" value="0" step="1">
+                <button class="start-game__btn">Старт</button>
+                <footer>
+                    <div class="start-game__developed">
+                        <a href="https://github.com/ZhEkA717"><img src="src/assets/icons/github.svg" alt="github"> Zheka Grushevskiy &copy; 2022</a> 
+                    </div>
+                    <div class="start-game__curse">
+                        <a href="https://rs.school/js/"><img src="src/assets/icons/logoRSS.svg" alt="logoRss"></a>
+                    </div>
+                </footer>
+            </div>
+            <div class="game-over">
+                <div class="game-over__title">Поздравляем!</div>
+                <div class="game-over__result">Вы прошли викторину и набрали <span>0</span> из 30 возможных баллов</div>
+                <button class="game-over__restart">Попробовать еще раз!</button>
+            </div>
+        </div>
+    </div>
+    <div class="slider">
+        <div class="container">
+            <div class="card"></div>
+        </div>
+    </div>
+    <script src="./dist/bundle.js"></script>
+</body>
+
+</html>

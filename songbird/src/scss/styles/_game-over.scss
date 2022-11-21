@@ -1,0 +1,41 @@
+.game-over{
+    display: none;
+    width: 100%;
+    min-height: 306px;
+    margin-top: 20px;
+    background: $bj-blocks;
+    border-radius: 5px;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+    padding-top: 65px;
+    padding-bottom: 75px;
+
+    &__title{
+        color: $text-color;
+        font-size: 76px;
+    }
+
+    &__result{
+        color: $text-color;
+        font-size: 19px;
+        margin-top: 10px;
+    }
+
+    &__restart{
+        cursor: pointer;
+        width: 94%;
+        margin: auto;
+        margin-top: 80px;
+        border-radius: 5px;
+        background-color: $bj-question-color-hover;
+        border: 1px solid #444;;
+        padding: 20px;
+        color:$text-color;
+        font-size: 15px;
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+}

@@ -1,0 +1,107 @@
+.answer-and-player{
+    display: none; //flex
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 24px 0;
+
+    .answers, .card{
+        background: $bj-blocks;
+        border-radius: 5px;
+        border: 1px solid #555;
+    }
+
+    .answers{
+        height: 306px;
+        width: 48.5%;
+        &__item{
+            list-style-type: none;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            color: $text-color;
+            border-bottom: 1px solid #555;
+            height: 51px;
+            cursor: pointer;
+            transition: 1s;
+
+
+            &:last-child{
+                border-bottom:none;
+                border-radius: 0 5px;
+            }
+
+            &:hover{
+                background: #555;
+            }
+
+            &__btn{
+                margin-right: 17px;
+                width: 8px;
+                height: 8px;
+                background: #555;
+                border-radius:100%;
+            }
+        }
+    }
+}
+
+.card{
+    width: 48.5%;
+    min-height: 306px;
+    &__start{
+        color: $text-color;
+        margin-top: 18px;
+        margin-left: 14px;
+        line-height: 130%;
+    }
+
+    &__player{
+        display: none;
+        width: 100%;
+        &__image{
+            width: 200px;
+            height: 155px;
+            margin-top: 13px;
+            margin-left: 13px;
+            img{
+                border-radius: 10px;
+                width: 200px;
+                height: 155px;
+            }
+        }
+
+        &__audio{
+            width: 100%;
+            padding-top: 17px;
+            padding-left: 30px;
+            padding-right: 30px;
+
+            .title{
+                color: $text-color;
+                font-size: 24px;
+            }
+
+            hr{
+                margin-top: 12px;
+                border-width: 0.5px;
+                border-color: #555;
+            }
+
+            .species{
+                color: $text-color;
+                margin-top: 8px;
+                margin-left: 6px;
+                font-size: 15px;
+            }
+        }
+    }
+
+    &__descr{
+        display: none;
+        color: $text-color;
+        margin-top: 30px;
+        margin-left: 14px;
+        margin-right: 30px;
+        line-height: 130%;
+    }
+}
