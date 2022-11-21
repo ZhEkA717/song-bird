@@ -1,5 +1,5 @@
 class ChangeLanguageStatic {
-    constructor(startButton, arrOfLevels, score, backButton, nextButton, messgeForGame, titleGameOver, subtitleGameOver, restartButton) {
+    constructor(startButton, arrOfLevels, score, backButton, nextButton, messgeForGame, titleGameOver, subtitleGameOver1,subtitleGameOver2, restartButton) {
         this.startButton = startButton;
         this.arrOfLevels = arrOfLevels;
         this.score = score;
@@ -7,7 +7,8 @@ class ChangeLanguageStatic {
         this.nextButton = nextButton;
         this.messgeForGame = messgeForGame;
         this.titleGameOver = titleGameOver;
-        this.subtitleGameOver = subtitleGameOver;
+        this.subtitleGameOver1 = subtitleGameOver1;
+        this.subtitleGameOver2 = subtitleGameOver2;
         this.restartButton = restartButton;
     }
 
@@ -19,7 +20,8 @@ class ChangeLanguageStatic {
               nextButton = document.querySelector(".nav-btns__next"),
               messgeForGame = document.querySelector(".card__start"),
               titleGameOver = document.querySelector(".game-over__title"),
-              subtitleGameOver = document.querySelector(".game-over__result"),
+              subtitleGameOver1 = document.querySelector(".game-over__result .part1"),
+              subtitleGameOver2 = document.querySelector(".game-over__result .part2"),
               restartButton = document.querySelector(".game-over__restart");
 
         startButton.innerHTML = this.startButton;
@@ -28,7 +30,8 @@ class ChangeLanguageStatic {
         nextButton.innerHTML = this.nextButton;
         messgeForGame.innerHTML = this.messgeForGame;
         titleGameOver.innerHTML = this.titleGameOver;
-        subtitleGameOver.innerHTML = this.subtitleGameOver;
+        subtitleGameOver1.innerHTML = this.subtitleGameOver1;
+        subtitleGameOver2.innerHTML = this.subtitleGameOver2;
         restartButton.innerHTML = this.restartButton;
 
         questionsItem.forEach((item,i) => {

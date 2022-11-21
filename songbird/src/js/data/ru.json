@@ -6,6 +6,7 @@
     "nextButton" : "Следующий уровень",
     "messgeForGame" : "Послушайте плеер.<br>Выберите птицу из списка.",
     "titleGameOver" : "Поздравляем!",
-    "subtitleGameOver" : "Вы прошли викторину и набрали <span>0</span> из 30 возможных баллов",
+    "subtitleGameOver1" : "Вы прошли викторину и набрали",
+    "subtitleGameOver2" : "из 30 возможных баллов",
     "restartButton" : "Попробовать еще"
 }
