@@ -25,7 +25,7 @@ function getDataOfLocalStorage(){
                     restartButton,
                     startTitle
                 } = data;
-                new ChangeLanguageStatic(startButton, arrOfLevels, score, backButton, nextButton, messgeForGame, titleGameOver, subtitleGameOver1,subtitleGameOver2, restartButton,startTitle).translate();
+                new ChangeLanguageStatic(startButton, arrOfLevels, score, backButton, nextButton, messgeForGame, titleGameOver, subtitleGameOver1,subtitleGameOver2, restartButton, startTitle).translate();
             });
         }
     }

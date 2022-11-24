@@ -74,7 +74,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     startVideo.addEventListener("ended", () => {
         count++;
-        if(count === 21){
+        if(count === 8){
             count=0;
         }
         startVideo.src = `src/assets/video/startPageVideo${count}.mp4`;

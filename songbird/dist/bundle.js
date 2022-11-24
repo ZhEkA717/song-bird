@@ -961,7 +961,7 @@ function changeLanguage(birdsDataRu,birdsDataEn){
                     restartButton,
                     startTitle
                 } = data;
-                new ChangeLanguageStatic(startButton, arrOfLevels, score, backButton, nextButton, messgeForGame, titleGameOver, subtitleGameOver1,subtitleGameOver2, restartButton,startTitle).translate();
+                new ChangeLanguageStatic(startButton, arrOfLevels, score, backButton, nextButton, messgeForGame, titleGameOver, subtitleGameOver1,subtitleGameOver2, restartButton, startTitle).translate();
             });
         }
     };
@@ -989,7 +989,7 @@ class ChangeLanguageStatic {
         this.titleGameOver = titleGameOver;
         this.subtitleGameOver1 = subtitleGameOver1;
         this.subtitleGameOver2 = subtitleGameOver2;
-        this.restartButton = restartButton,
+        this.restartButton = restartButton;
         this.startTitle = startTitle;
     }
 
@@ -1005,6 +1005,7 @@ class ChangeLanguageStatic {
               subtitleGameOver2 = document.querySelector(".game-over__result .part2"),
               restartButton = document.querySelector(".game-over__restart"),
               startTitle = document.querySelector(".start-game__video__title");
+              console.log(startTitle)
 
         startButton.innerHTML = this.startButton;
         score.innerHTML = this.score;
@@ -1246,7 +1247,7 @@ function getDataOfLocalStorage(){
                     restartButton,
                     startTitle
                 } = data;
-                new ChangeLanguageStatic(startButton, arrOfLevels, score, backButton, nextButton, messgeForGame, titleGameOver, subtitleGameOver1,subtitleGameOver2, restartButton,startTitle).translate();
+                new ChangeLanguageStatic(startButton, arrOfLevels, score, backButton, nextButton, messgeForGame, titleGameOver, subtitleGameOver1,subtitleGameOver2, restartButton, startTitle).translate();
             });
         }
     }
@@ -1753,7 +1754,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     startVideo.addEventListener("ended", () => {
         count++;
-        if(count === 21){
+        if(count === 8){
             count=0;
         }
         startVideo.src = `src/assets/video/startPageVideo${count}.mp4`;
