@@ -1449,12 +1449,9 @@ module.exports = getResource;
 /*!*************************************!*\
   !*** ./src/js/modules/startGame.js ***!
   \*************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((module) => {
 
 function startGame() {
-    const {birdsDataRu,birdsDataEn} = __webpack_require__(/*! ../data/choiceLanguage */ "./src/js/data/choiceLanguage.js"),
-    changeLanguage = __webpack_require__(/*! ./changeLanguage */ "./src/js/modules/changeLanguage.js");
-
     const startGameBlock = document.querySelector(".start-game")
     const startGameButtton = document.querySelector(".start-game__btn");
     const score = document.querySelector(".score");
@@ -1464,10 +1461,6 @@ function startGame() {
     const navButtons = document.querySelector(".nav-btns");
     const questions = document.querySelector(".questions");
     const backToHomeButton = document.querySelector(".nav-btns__back");
-    const gameOverResult = document.querySelector(".game-over__result span");
-    const gameOver = document.querySelector(".game-over");
-    const mainBlock = document.querySelector("main");
-
 
     startGameButtton.addEventListener("click", () => {
         startGameBlock.style.display = "none";
@@ -1479,7 +1472,7 @@ function startGame() {
         navButtons.style.display = "flex";
     });
 
-    backToHomeButton.addEventListener("click",()=>{
+    backToHomeButton.addEventListener("click", (e) => {
         startGameBlock.style.display = "block";
         language.style.display = "block";
         questions.style.display = "none";
@@ -1502,6 +1495,7 @@ module.exports = startGame;
 
 function trueBird() {
     const whatBirdAudio = document.querySelector(".what-bird audio");
+    const whatBirdImage = document.querySelector(".audio-player__button img");
     const answerAudio = document.querySelector(`.audio-player_answer audio`);
     const answerItem = document.querySelectorAll(".answers__item");
     const score = document.querySelector(".score span");
@@ -1554,6 +1548,7 @@ function trueBird() {
             count += 5;
             winSong.load();
             winSong.play();
+            pauseAudio();
         }
 
         pointClickedEl.style.background = "#00bc8c";
@@ -1564,6 +1559,11 @@ function trueBird() {
         score.innerHTML = count;
         nextButton.style.backgroundColor = "#00bc8c";
         nextButton.classList.add("istrue");
+    }
+    function pauseAudio() {
+        whatBirdImage.src = "./src/assets/icons/play.svg";
+        whatBirdImage.className = "play";
+        whatBirdAudio.pause();
     }
 }
 
@@ -1728,6 +1728,11 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     window.onresize = ()=>{changeRowsGallery(matchMediaGallery);}
     changeRowsGallery(matchMediaGallery);
+
+    window.onbeforeunload=befUnload;
+    function befUnload(e) {
+        e.returnValue = 'Вы действительно хотите покинуть страницу?';
+    };
 });
 
 

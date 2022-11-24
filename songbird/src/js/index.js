@@ -59,5 +59,10 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     window.onresize = ()=>{changeRowsGallery(matchMediaGallery);}
     changeRowsGallery(matchMediaGallery);
+
+    window.onbeforeunload=befUnload;
+    function befUnload(e) {
+        e.returnValue = 'Вы действительно хотите покинуть страницу?';
+    };
 });
 

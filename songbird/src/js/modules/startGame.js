@@ -1,7 +1,4 @@
 function startGame() {
-    const {birdsDataRu,birdsDataEn} = require("../data/choiceLanguage"),
-    changeLanguage = require("./changeLanguage");
-
     const startGameBlock = document.querySelector(".start-game")
     const startGameButtton = document.querySelector(".start-game__btn");
     const score = document.querySelector(".score");
@@ -11,10 +8,6 @@ function startGame() {
     const navButtons = document.querySelector(".nav-btns");
     const questions = document.querySelector(".questions");
     const backToHomeButton = document.querySelector(".nav-btns__back");
-    const gameOverResult = document.querySelector(".game-over__result span");
-    const gameOver = document.querySelector(".game-over");
-    const mainBlock = document.querySelector("main");
-
 
     startGameButtton.addEventListener("click", () => {
         startGameBlock.style.display = "none";
@@ -26,7 +19,7 @@ function startGame() {
         navButtons.style.display = "flex";
     });
 
-    backToHomeButton.addEventListener("click",()=>{
+    backToHomeButton.addEventListener("click", (e) => {
         startGameBlock.style.display = "block";
         language.style.display = "block";
         questions.style.display = "none";

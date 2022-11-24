@@ -1,5 +1,6 @@
 function trueBird() {
     const whatBirdAudio = document.querySelector(".what-bird audio");
+    const whatBirdImage = document.querySelector(".audio-player__button img");
     const answerAudio = document.querySelector(`.audio-player_answer audio`);
     const answerItem = document.querySelectorAll(".answers__item");
     const score = document.querySelector(".score span");
@@ -52,6 +53,7 @@ function trueBird() {
             count += 5;
             winSong.load();
             winSong.play();
+            pauseAudio();
         }
 
         pointClickedEl.style.background = "#00bc8c";
@@ -62,6 +64,11 @@ function trueBird() {
         score.innerHTML = count;
         nextButton.style.backgroundColor = "#00bc8c";
         nextButton.classList.add("istrue");
+    }
+    function pauseAudio() {
+        whatBirdImage.src = "./src/assets/icons/play.svg";
+        whatBirdImage.className = "play";
+        whatBirdAudio.pause();
     }
 }
 
