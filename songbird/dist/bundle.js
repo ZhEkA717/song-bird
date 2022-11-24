@@ -958,9 +958,10 @@ function changeLanguage(birdsDataRu,birdsDataEn){
                     titleGameOver,
                     subtitleGameOver1,
                     subtitleGameOver2,
-                    restartButton
+                    restartButton,
+                    startTitle
                 } = data;
-                new ChangeLanguageStatic(startButton, arrOfLevels, score, backButton, nextButton, messgeForGame, titleGameOver, subtitleGameOver1,subtitleGameOver2, restartButton).translate();
+                new ChangeLanguageStatic(startButton, arrOfLevels, score, backButton, nextButton, messgeForGame, titleGameOver, subtitleGameOver1,subtitleGameOver2, restartButton,startTitle).translate();
             });
         }
     };
@@ -978,7 +979,7 @@ module.exports = changeLanguage;
 /***/ ((module) => {
 
 class ChangeLanguageStatic {
-    constructor(startButton, arrOfLevels, score, backButton, nextButton, messgeForGame, titleGameOver, subtitleGameOver1,subtitleGameOver2, restartButton) {
+    constructor(startButton, arrOfLevels, score, backButton, nextButton, messgeForGame, titleGameOver, subtitleGameOver1,subtitleGameOver2, restartButton,startTitle) {
         this.startButton = startButton;
         this.arrOfLevels = arrOfLevels;
         this.score = score;
@@ -988,7 +989,8 @@ class ChangeLanguageStatic {
         this.titleGameOver = titleGameOver;
         this.subtitleGameOver1 = subtitleGameOver1;
         this.subtitleGameOver2 = subtitleGameOver2;
-        this.restartButton = restartButton;
+        this.restartButton = restartButton,
+        this.startTitle = startTitle;
     }
 
     translate() {
@@ -1001,7 +1003,8 @@ class ChangeLanguageStatic {
               titleGameOver = document.querySelector(".game-over__title"),
               subtitleGameOver1 = document.querySelector(".game-over__result .part1"),
               subtitleGameOver2 = document.querySelector(".game-over__result .part2"),
-              restartButton = document.querySelector(".game-over__restart");
+              restartButton = document.querySelector(".game-over__restart"),
+              startTitle = document.querySelector(".start-game__video__title");
 
         startButton.innerHTML = this.startButton;
         score.innerHTML = this.score;
@@ -1012,6 +1015,7 @@ class ChangeLanguageStatic {
         subtitleGameOver1.innerHTML = this.subtitleGameOver1;
         subtitleGameOver2.innerHTML = this.subtitleGameOver2;
         restartButton.innerHTML = this.restartButton;
+        startTitle.innerHTML = this.startTitle;
 
         questionsItem.forEach((item,i) => {
             item.innerHTML = this.arrOfLevels[i];
@@ -1073,6 +1077,11 @@ changeLanguage(birdsDataRu,birdsDataEn).forEach(item=>{
   inputRange.addEventListener("click", clickInputRange);
   inputRange.addEventListener("touchmove", moveInputRange);
   inputRange.addEventListener("touchend", clickInputRange);
+  
+  wallWrapper.scroll({
+    left: 5,
+    behavior: "smooth"
+  });
 
   function moveInputRange(){
     let scrollingWidth = wallWrapper.scrollWidth;
@@ -1234,9 +1243,10 @@ function getDataOfLocalStorage(){
                     titleGameOver,
                     subtitleGameOver1,
                     subtitleGameOver2,
-                    restartButton
+                    restartButton,
+                    startTitle
                 } = data;
-                new ChangeLanguageStatic(startButton, arrOfLevels, score, backButton, nextButton, messgeForGame, titleGameOver, subtitleGameOver1,subtitleGameOver2, restartButton).translate();
+                new ChangeLanguageStatic(startButton, arrOfLevels, score, backButton, nextButton, messgeForGame, titleGameOver, subtitleGameOver1,subtitleGameOver2, restartButton,startTitle).translate();
             });
         }
     }
@@ -1686,7 +1696,7 @@ window.addEventListener("DOMContentLoaded", () => {
         saveDataInLocalStorage = __webpack_require__(/*! ./modules/saveDataInLocalStorage */ "./src/js/modules/saveDataInLocalStorage.js"),
         getDataOfLocalStorage = __webpack_require__(/*! ./modules/getDataOfLocalStorage */ "./src/js/modules/getDataOfLocalStorage.js");
 
-        getDataOfLocalStorage();
+    getDataOfLocalStorage();
 
     audioPlayerInteractive(".audio-player");
     audioPlayer("https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3", ".audio-player");
@@ -1709,7 +1719,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         saveDataInLocalStorage();
     });
-    
+
     startGame();
     answers(currLang);
     randomWhatBird(currLang);
@@ -1719,22 +1729,36 @@ window.addEventListener("DOMContentLoaded", () => {
     galleryPopap();
 
     const matchMediaGallery = window.matchMedia('(max-width: 520px)');
-    function changeRowsGallery(e){
-        if(e.matches){
-            gallery(2);
-        }else{
+
+    function changeRowsGallery(e) {
+        if (e.matches) {
+            gallery(1);
+        } else {
             gallery(3);
         }
     }
-    window.onresize = ()=>{changeRowsGallery(matchMediaGallery);}
+    window.onresize = () => {
+        changeRowsGallery(matchMediaGallery);
+    }
     changeRowsGallery(matchMediaGallery);
 
     window.onbeforeunload=befUnload;
     function befUnload(e) {
         e.returnValue = 'Вы действительно хотите покинуть страницу?';
     };
-});
 
+    const startVideo = document.querySelector(".start-game__video video");
+
+    let count = 0;
+
+    startVideo.addEventListener("ended", () => {
+        count++;
+        if(count === 21){
+            count=0;
+        }
+        startVideo.src = `src/assets/video/startPageVideo${count}.mp4`;
+    });
+});
 
 })();
 

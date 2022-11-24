@@ -42,6 +42,11 @@ changeLanguage(birdsDataRu,birdsDataEn).forEach(item=>{
   inputRange.addEventListener("click", clickInputRange);
   inputRange.addEventListener("touchmove", moveInputRange);
   inputRange.addEventListener("touchend", clickInputRange);
+  
+  wallWrapper.scroll({
+    left: 5,
+    behavior: "smooth"
+  });
 
   function moveInputRange(){
     let scrollingWidth = wallWrapper.scrollWidth;

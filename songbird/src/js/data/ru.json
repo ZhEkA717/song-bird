@@ -8,5 +8,6 @@
     "titleGameOver" : "Поздравляем!",
     "subtitleGameOver1" : "Вы прошли викторину и набрали  ",
     "subtitleGameOver2" : "  из 30 возможных баллов",
-    "restartButton" : "Попробовать еще"
+    "restartButton" : "Попробовать еще",
+    "startTitle" : "Какая птица?"
 }

@@ -8,5 +8,6 @@
     "titleGameOver" : "Congratulations!",
     "subtitleGameOver1" : "You passed the quiz and scored  ",
     "subtitleGameOver2" : "  out of 30 possible points",
-    "restartButton" : "Try again"
+    "restartButton" : "Try again",
+    "startTitle" : "What bird?"
 }

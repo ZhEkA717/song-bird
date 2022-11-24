@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
         saveDataInLocalStorage = require("./modules/saveDataInLocalStorage"),
         getDataOfLocalStorage = require("./modules/getDataOfLocalStorage");
 
-        getDataOfLocalStorage();
+    getDataOfLocalStorage();
 
     audioPlayerInteractive(".audio-player");
     audioPlayer("https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3", ".audio-player");
@@ -40,7 +40,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         saveDataInLocalStorage();
     });
-    
+
     startGame();
     answers(currLang);
     randomWhatBird(currLang);
@@ -50,19 +50,33 @@ window.addEventListener("DOMContentLoaded", () => {
     galleryPopap();
 
     const matchMediaGallery = window.matchMedia('(max-width: 520px)');
-    function changeRowsGallery(e){
-        if(e.matches){
-            gallery(2);
-        }else{
+
+    function changeRowsGallery(e) {
+        if (e.matches) {
+            gallery(1);
+        } else {
             gallery(3);
         }
     }
-    window.onresize = ()=>{changeRowsGallery(matchMediaGallery);}
+    window.onresize = () => {
+        changeRowsGallery(matchMediaGallery);
+    }
     changeRowsGallery(matchMediaGallery);
 
     window.onbeforeunload=befUnload;
     function befUnload(e) {
         e.returnValue = 'Вы действительно хотите покинуть страницу?';
     };
-});
 
+    const startVideo = document.querySelector(".start-game__video video");
+
+    let count = 0;
+
+    startVideo.addEventListener("ended", () => {
+        count++;
+        if(count === 21){
+            count=0;
+        }
+        startVideo.src = `src/assets/video/startPageVideo${count}.mp4`;
+    });
+});

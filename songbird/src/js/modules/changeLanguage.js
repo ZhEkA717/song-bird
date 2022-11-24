@@ -34,9 +34,10 @@ function changeLanguage(birdsDataRu,birdsDataEn){
                     titleGameOver,
                     subtitleGameOver1,
                     subtitleGameOver2,
-                    restartButton
+                    restartButton,
+                    startTitle
                 } = data;
-                new ChangeLanguageStatic(startButton, arrOfLevels, score, backButton, nextButton, messgeForGame, titleGameOver, subtitleGameOver1,subtitleGameOver2, restartButton).translate();
+                new ChangeLanguageStatic(startButton, arrOfLevels, score, backButton, nextButton, messgeForGame, titleGameOver, subtitleGameOver1,subtitleGameOver2, restartButton,startTitle).translate();
             });
         }
     };
