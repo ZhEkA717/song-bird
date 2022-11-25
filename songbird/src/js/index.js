@@ -67,16 +67,4 @@ window.addEventListener("DOMContentLoaded", () => {
     function befUnload(e) {
         e.returnValue = 'Вы действительно хотите покинуть страницу?';
     };
-
-    const startVideo = document.querySelector(".start-game__video video");
-
-    let count = 0;
-
-    startVideo.addEventListener("ended", () => {
-        count++;
-        if(count === 8){
-            count=0;
-        }
-        startVideo.src = `src/assets/video/startPageVideo${count}.mp4`;
-    });
 });

@@ -1005,7 +1005,6 @@ class ChangeLanguageStatic {
               subtitleGameOver2 = document.querySelector(".game-over__result .part2"),
               restartButton = document.querySelector(".game-over__restart"),
               startTitle = document.querySelector(".start-game__video__title");
-              console.log(startTitle)
 
         startButton.innerHTML = this.startButton;
         score.innerHTML = this.score;
@@ -1747,18 +1746,6 @@ window.addEventListener("DOMContentLoaded", () => {
     function befUnload(e) {
         e.returnValue = 'Вы действительно хотите покинуть страницу?';
     };
-
-    const startVideo = document.querySelector(".start-game__video video");
-
-    let count = 0;
-
-    startVideo.addEventListener("ended", () => {
-        count++;
-        if(count === 8){
-            count=0;
-        }
-        startVideo.src = `src/assets/video/startPageVideo${count}.mp4`;
-    });
 });
 
 })();

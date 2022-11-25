@@ -25,7 +25,6 @@ class ChangeLanguageStatic {
               subtitleGameOver2 = document.querySelector(".game-over__result .part2"),
               restartButton = document.querySelector(".game-over__restart"),
               startTitle = document.querySelector(".start-game__video__title");
-              console.log(startTitle)
 
         startButton.innerHTML = this.startButton;
         score.innerHTML = this.score;
